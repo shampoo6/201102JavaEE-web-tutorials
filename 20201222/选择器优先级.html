@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 外部文件中的样式优先级低于当前html文件中的样式 -->
+    <link rel="stylesheet" href="./main.css" />
+    <style type="text/css">
+        #my-id {
+            color: teal;
+        }
+
+        .my-span2 {
+            color: blue;
+        }
+
+        .my-span1 {
+            color: green;
+        }
+
+        p span {
+            color: yellow;
+        }
+
+        span {
+            /* 使用 !important 强制提升优先级 */
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span id="my-id" class="my-span1 my-span2" style="color:violet;">hello world</span>
+    </p>
+</body>
+
+</html>

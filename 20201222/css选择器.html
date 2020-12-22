@@ -1,25 +1,201 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            /* 标签选择器 */
-            div {
-                color: red;
-            }
 
-            /* id选择器 */
-            #id-selector {
-                color: blue;
-            }
-        </style>
-    </head>
-    <body>
-        <div>1</div>
+<head>
+    <style>
+        /* 标签选择器 */
+        /* div {
+            color: red;
+        } */
+
+        /* id选择器 */
+        #id-selector {
+            color: blue;
+        }
+
+        /* 类（class）选择器 */
+        .my-class {
+            color: yellow;
+        }
+
+        .my-font {
+            font-size: 24px;
+        }
+
+        /* 可以将多个选择器用逗号隔开，套用相同的css样式 */
+        /* #id-selector, .my-class, .my-font {
+                background-color: #ccc;
+            } */
+
+        /* 多类选择 */
+        /* 该选择器，只有当元素同时具备选择器中指定的类时，才会被选中 */
+        .my-class.my-font {
+            background-color: #ccc;
+        }
+
+        /* 派生选择器 */
+        /* 派生选择器是由多个选择器组合构成 */
+
+        /* 后代选择 */
+        /* 后代选择，从左到右，可以由多个选择器构成，中间用空格隔开，从树状结构分析，左侧选择器必须包含右侧选择器 */
+        /* ol li {
+                color: rgb(48, 82, 173);
+            } */
+
+        /* 子代选择 */
+        /* 子代选择器，只会选中子级的元素，不会选择孙子辈或更低级的元素 */
+        ol>li {
+            padding-left: 50px;
+            color: pink;
+        }
+
+        /* 兄弟选择 */
+        /* 兄弟选择器，会选中最近的下一个同级元素 */
+        /* .my-ul-li + li {
+                color:rgb(180, 12, 180)
+            } */
+
+        /* 选择.my-ul-li元素同级的后面的li标签 */
+        .my-ul-li~li {
+            background-color: blueviolet;
+        }
+
+        /* 
+                :hover  鼠标悬停上方时使用样式
+				:link   未访问的链接
+				:visited   访问过的链接
+				:active   未访问的链接
+				使用注意：对于a标签链接的处理，active必须在hover后，hover必须在link和visited后
+				
+				li:nth-child(n)  选中li父元素的第n个子元素
+				li:first-child  选中li父元素的第一个子元素
+				li:last-child  选中li父元素的最后一个子元素
+				li:nth-of-type(n) 选中li父元素中的第n个li子元素
+				
+				:empty 选中没有任何内容的元素
+				
+				:root 选中文档的根元素，即 html 元素
+             */
+
+        /* 伪类选择器 */
+        .div1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        /* :hover 鼠标悬停状态样式 */
+        .div1:hover {
+            font-size: 24px;
+            font-weight: bolder;
+        }
+
+        /* 主要针对a标签的伪类 */
+        /* :link 代表未访问时 */
+        .atab-link:link {
+            color: pink;
+        }
+
+        /* :visited 访问过的 */
+        .atab-visited:visited {
+            background-color: cyan;
+        }
+
+        /* :active 处在鼠标按下时 */
+        .atab-active:active {
+            background-color: darkgoldenrod;
+        }
+
+        /* 以下伪类专用于选择不同位置的同级元素 */
+        /* 选中第一个子节点 */
+        /* .my-ul li:first-child {
+            color: pink;
+        } */
+
+        /* 选中第最后一个子节点 */
+        .my-ul li:last-child {
+            color: blue;
+        }
+
+        /* 作用是：选中.my-ul div所在父元素下的第n个节点元素 */
+        .my-ul div:nth-child(2) {
+            color: pink;
+        }
+
+        /* 作用是：选中.my-ul div所在父元素下第几个div标签 */
+        /* .my-ul li:nth-of-type(2) {
+            color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+
+    <!-- 给标签添加id属性，用于id选择器的选择 -->
+    <span id="id-selector">id选择器</span>
+
+    <br />
+
+    <!-- 给标签添加class属性，用于类选择器的选择 -->
+    <!-- 一个标签可以应用多个类，用空格隔开 -->
+    <span class="my-class my-font">class1选择器</span>
+    <div class="my-class my-font my-class2">class2选择器</div>
+    <span class="my-class">class3选择器</span>
+    <p class="my-class">class4选择器</p>
+
+    <div class="my-list-container">
+        <div>
+            div1
+            <ol>
+                <li>1</li>
+                <li>2</li>
+                <li>
+                    <ul>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                    </ul>
+                </li>
+            </ol>
+            <span>
+                <ol>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                </ol>
+            </span>
+        </div>
+        <div>
+            div2
+            <ul>
+                <li>4</li>
+                <li class="my-ul-li">5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="div1">
+        hello world
+    </div>
+    <!-- a标签如果不加href属性，样式会出现异常 -->
+    <a class="atab-link" href="http://www.baidu.com" target="_blank">link</a>
+    <a class="atab-visited" href="http://www.baidu.com" target="_blank">visited</a>
+    <a class="atab-active" href="http://www.baidu.com" target="_blank">active</a>
+
+    <ul class="my-ul">
+        <li>一</li>
+        <li>1</li>
         <div>2</div>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+        <li>五</li>
+    </ul>
+</body>
 
-        <!-- 给标签添加id属性，用于id选择器的选择 -->
-        <span id="id-selector">id选择器</span>
-
-        <br/>
-    </body>
 </html>
