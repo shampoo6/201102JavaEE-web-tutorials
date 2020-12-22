@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 额外附加信息 -->
+        <!-- charset="utf-8" -->
+        <!-- 其中charset称为标签元素的属性 -->
+        <!-- meta标签是一个单标签，他不是成对的标签，取而代之使用斜杠结尾 -->
+        <!-- 单标签没有标签体 -->
+        <meta charset="utf-8"/>
+        <!-- 标题 -->
+        <title>这是我的带有标题的页面</title>
+    </head>
+    <body>
+        <!-- 单行复制：ctrl + alt + up/down -->
+        <!-- 单行删除：ctrl + shift + k -->
+        <!-- 多行编辑查询相同字符串：ctrl + d -->
+        <!-- 整行文本上下移动：alt + up/down -->
+
+        <!-- h标签：页面中的标题标签，自带文本大小，加粗和行间距 -->
+        <!-- h标签后的数字，越大，文字越小 -->
+        <h1>hello world</h1>
+        <h2>hello world</h2>
+        <h3>hello world</h3>
+        <h4>hello world</h4>
+        <h5>hello world</h5>
+        <h6>hello world</h6>
+
+        <!-- 段落 -->
+        <!-- 自带行间距 -->
+        <p>
+            这是一个段落内容
+        </p>
+        <p>
+            这是一个段落内容
+        </p>
+        <p>
+            这是一个段落内容
+        </p>
+        
+        <!-- 文字标签 -->
+        <span>
+            hello
+            <span style="color: red">
+                world
+            </span>
+        </span>
+
+        <!-- 图片标签 -->
+        <!-- 是一个单标签 -->
+        <!-- src：图片源 -->
+        <!-- alt：图片源加载失败时显示alt的内容 -->
+        <!-- onerror：加载失败触发的事件 -->
+        <!-- <img src="./2.png" alt="图片加载失败" onerror="alert('hello')"/> -->
+        <img src="./2.png" alt="图片加载失败"/>
+
+        <!-- 有序列表 order list -->
+        <ol>
+            <!-- 列表元素 list item -->
+            <li>唱歌</li>
+            <li>跳舞</li>
+            <li>画画</li>
+        </ol>
+
+        <!-- 无序列表 unorder list -->
+        <ul>
+            <li>code</li>
+            <li>issue</li>
+            <li>requests</li>
+        </ul>
+
+        <!-- 水平线 -->
+        <!-- 这个很少用，通常使用css样式的border进行替代 -->
+        <hr/>
+
+        <!-- 换行 -->
+        <span>1</span>
+        <br/>
+        <span>2</span>
+
+        <div>3</div>
+        <div>4</div>
+
+        <!-- a标签 -->
+        <!-- 超链接 -->
+        <!-- href：链接地址 -->
+        <!-- target：用于指定链接的打开方式，值为_blank时，会新开一个窗口打开链接 -->
+        <!-- a标签加上target = _blank的组合，常用于：1. 新建窗口打开网页；2. 新建窗口进行文件下载 -->
+        <a href="http://www.baidu.com" target="_top">跳转到百度</a>
+        <!-- 不会产生跳转 -->
+        <!-- 应用场景，屏蔽掉啊标签的默认跳转功能，可以让开发人员自定义点击事件 -->
+        <a href="javascript:;">不会跳转的a标签</a>
+
+        <!-- 锚点 -->
+        <!-- 作用：用于页面定位 -->
+        <a href="#footer">#footer</a>
+
+        <!-- 相当于文件的相对路径，可以访问url的相对目录下的文件 -->
+        <a href="./1.png">./1.png</a>
+
+        <!-- 发送邮件 -->
+        <!-- 可以发送http协议意外的网络请求 -->
+        <a href="mailto:18626545125@163.com?subject=邮件标题&body=邮件内容">发送邮件</a>
+
+        <!-- 以下是对文本内容进行修改的标签 -->
+
+        <!-- 文本加强标签 -->
+        <!-- 作用就是加粗文本 -->
+        <!-- 可用css的font-weight替代 -->
+        <strong>这是加强标签中的内容</strong>
+
+        <!-- b标签是加粗字体 -->
+        <!-- 可用css的font-weight替代 -->
+        <b>我是标签</b>
+
+        <!-- 倾斜 -->
+        <i>我倾斜了</i>
+
+        <!-- 下划线 -->
+        <u>我带有下划线</u>
+
+        <!-- ins标签 带有下划线 -->
+        <ins>这是ins标签</ins>
+
+        <!-- del标签 通常用于弃用内容做注释 -->
+        <del>我被弃用了</del>
+
+        <!-- 上下角标 -->
+        <sup>上角标</sup>
+        <sub>下角标</sub>
+
+        <!-- 预览 -->
+        <!-- 会原封不动还原代码中的格式，且字体少有不同 -->
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre>
+            我
+                爱
+                    中国
+        </pre>
+        <pre id="footer">
+            我
+                爱
+                    中国
+        </pre>
+    </body>
+</html>
