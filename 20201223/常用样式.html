@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        /* 文本样式 */
+        div {
+            /* 以下是常用文本样式 */
+            /* 修改字体：注意字体库是否存在 */
+            font-family: '微软雅黑';
+            /* 修改字体大小 */
+            font-size: 50px;
+            /* 加粗 */
+            font-weight: bolder;
+            /* 颜色 */
+            color: rgba(12, 163, 63, 0.55);
+
+            /* 还有一些不太常用的样式 */
+            /* 单词间距，用于指定英文单词间的距离 */
+            /* word-spacing: 20px;  */
+            /* 字符间距 */
+            /* letter-spacing: 20px; */
+            /* 段落缩进 */
+            text-indent: 2em;
+            /* 规定英文字母的大小写 */
+            /* 待选项：
+                capitalize：首字母大写
+                uppercase：全部大写
+                lowercase：全部小写
+             */
+            text-transform: capitalize;
+        }
+
+        #text3 {
+            /* 文本间距 */
+            word-spacing: 20px;
+            /* 规定英文字母的大小写 */
+            text-transform: capitalize;
+        }
+
+        /* 文字装饰线 */
+        /* 用于修饰a标签 */
+        #text1 {
+            /* 文本装饰样式：决定装饰线样子 */
+            /* 待选项有：
+                dashed：虚线
+                dotted：原点
+                double：双实线
+                solid：单实线
+             */
+            text-decoration-style: dashed;
+            /* 装饰线颜色 */
+            text-decoration-color: green;
+            /* 装饰线位置 */
+            /* 待选项有：
+                blink, none：隐藏装饰线
+                line-through：贯通线，从文本中间贯通
+                underline：在文本下方，和文本相接
+                overline：在文本下方，不与文本相接
+             */
+            text-decoration-line: none;
+        }
+
+        #text2 {
+            /* 装饰线是否避开文本内容进行自动短句 */
+            /* 待选项：auto：默认自动断开避开文本，none：不会断开 */
+            text-decoration-skip-ink: auto;
+            /* 符合写法，属性的先后顺序没有影响 */
+            text-decoration: dotted red line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div>你好，世界！</div>
+    <div id="text3">hello world !! world hello</div>
+    <span>你好，世界！</span>
+    <div>
+        <a id="text1" href="http://www.baidu.com">你好，世界！</a>
+        <a id="text2" href="http://www.baidu.com">jkshdfgpghruy</a>
+    </div>
+</body>
+
+</html>
