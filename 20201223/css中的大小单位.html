@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background-color: darkorchid;
+            width: 500px;
+            height: 500px;
+
+            /* 单位px，代表像素大小 */
+            font-size: 24px;
+
+            /* 使用百分比，可以表述其相对父节点的大小 */
+            width: 33.3333%;
+
+
+
+        }
+
+        #text {
+            /* 首行缩进 */
+            /* 单位em，代表的是相对字体的大小 */
+            text-indent: 2em;
+            /* 单位ex，代表的是相对字体尺寸一半的大小 */
+            text-indent: 2ex;
+        }
+
+        #calc {
+            background-color: darkred;
+            width: 500px;
+            height: 500px;
+
+            /* 计算函数：可以通过计算函数，将不同的单位尺寸进行运算后得出一个尺寸结果 */
+            margin-left: calc(50% - 250px);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        hello world !!!
+        <br />
+        你好，世界！
+    </div>
+
+    <div id="text">
+        立刻受到攻击时灯笼裤飞机立刻受到攻击时灯笼裤飞机
+    </div>
+
+    <div id="calc">
+        动态数值div
+    </div>
+</body>
+
+</html>
