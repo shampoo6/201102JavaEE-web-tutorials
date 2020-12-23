@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 22px;
+            height: 22px;
+            border: 2px red solid;
+            background-image: url(./sprite.png);
+        }
+
+        #wb:hover,
+        #tx:hover,
+        #fb:hover,
+        #tt:hover,
+        #in:hover {
+            background-position-y: -22px;
+        }
+
+        #tx {
+            background-position-x: calc(1*-22px);
+        }
+        
+        #fb {
+            background-position-x: calc(2*-22px);
+        }
+        
+        #tt {
+            background-position-x: calc(3*-22px);
+        }
+        
+        #in {
+            background-position-x: calc(4*-22px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wb"></div>
+    <div id="tx"></div>
+    <div id="fb"></div>
+    <div id="tt"></div>
+    <div id="in"></div>
+</body>
+
+</html>
