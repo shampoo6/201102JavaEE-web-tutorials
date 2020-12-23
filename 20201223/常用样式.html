@@ -5,11 +5,14 @@
     <style type="text/css">
         /* 文本样式 */
         div {
+            /* 文本居中 */
+            /* text-align: center; */
+
             /* 以下是常用文本样式 */
             /* 修改字体：注意字体库是否存在 */
             font-family: '微软雅黑';
             /* 修改字体大小 */
-            font-size: 50px;
+            /* font-size: 50px; */
             /* 加粗 */
             font-weight: bolder;
             /* 颜色 */
@@ -21,19 +24,21 @@
             /* 字符间距 */
             /* letter-spacing: 20px; */
             /* 段落缩进 */
-            text-indent: 2em;
+            /* text-indent: 2em; */
             /* 规定英文字母的大小写 */
             /* 待选项：
                 capitalize：首字母大写
                 uppercase：全部大写
                 lowercase：全部小写
              */
-            text-transform: capitalize;
+            /* text-transform: capitalize; */
         }
 
         #text3 {
             /* 文本间距 */
             word-spacing: 20px;
+            /* 段落缩进 */
+            text-indent: 2em;
             /* 规定英文字母的大小写 */
             text-transform: capitalize;
         }
@@ -123,6 +128,31 @@
             margin: 10px 20px 30px 40px;
             /* 赋值2个的情况 从top开始，将第一个参数赋值给 top、bottom；第二个参数赋值给 left、right */
             margin: 10px 20px;
+
+            /* 显示类型 */
+            /* 待选项：block，inline，none，inline-block，flex */
+            display: block;
+
+        }
+
+        #div2 {
+            /* font-size: 24px; */
+            width: 200px;
+
+            /* 横向居中 */
+            margin-left: auto;
+            margin-right: auto;
+            /* 下面的代码无法纵向居中 */
+            /* margin-top: auto;
+            margin-bottom: auto; */
+        }
+
+        #div3 {
+            /* 背景 */
+            width: 300px;
+            height: 300px;
+
+            background: red url('./1.png');
         }
     </style>
 </head>
@@ -139,6 +169,13 @@
         lakrhtglairjfskghdla看来是的风格和令人反感lakrhtglairjfskghdla看来是的风格和令人反感lakrhtglairjfskghdla看来是的风格和令人反感lakrhtglairjfskghdla看来是的风格和令人反感lakrhtglairjfskghdla看来是的风格和令人反感lakrhtglairjfskghdla看来是的风格和令人反感
     </div>
     <div id="div1">
+        hello world !!!
+    </div>
+    <!-- 父节点中使用line-height，使内容进行上下居中，但是内容div不能设置高度 -->
+    <div style="line-height: 200px;">
+        <div id="div2">hello world !!!</div>
+    </div>
+    <div id="div3">
         hello world !!!
     </div>
 </body>
