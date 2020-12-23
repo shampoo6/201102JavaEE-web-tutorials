@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+
+        #div1 {
+            /* 盒子模型的控制属性 */
+
+            /* 显示类型 */
+            /* 待选项：block，inline，none，inline-block，flex */
+            display: block;
+
+            /* 修改内容宽 */
+            width: 200px;
+            /* 修改内容高 */
+            height: 200px;
+
+            /* 内边距 */
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            /* 可以直接设置padding，能够同时修改上下左右的内边距 */
+
+            /* 边框 */
+            /* border-top: 10px double green;
+            border-bottom: 5px dotted yellow;
+            border-left: 3px dashed red;
+            border-right: 1px solid black; */
+            /* 可以直接设置border，能够同时修改上下左右的边框 */
+            /* 边框样子 */
+            border-style: solid;
+            /* 边框宽度 */
+            border-width: 50px;
+            /* 边框颜色 */
+            border-color: blue;
+            /* 边框半径 */
+            border-radius: 50px;
+
+            /* 外边距 */
+            /* margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px; */
+            /* 可以直接设置margin，能够同时修改上下左右的外边距 */
+            /* 复合赋值 */
+            /* 赋值4个的情况 从top开始，将后面的值，沿顺时针，依次给 top right bottom left 进行赋值 */
+            margin: 10px 20px 30px 40px;
+            /* 赋值2个的情况 从top开始，将第一个参数赋值给 top、bottom；第二个参数赋值给 left、right */
+            margin: 10px 20px;
+        }
+
+        #div2 {
+            /* font-size: 24px; */
+            width: 200px;
+
+            /* 横向居中 */
+            margin-left: auto;
+            margin-right: auto;
+            /* 下面的代码无法纵向居中 */
+            /* margin-top: auto;
+            margin-bottom: auto; */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        hello world !!!
+    </div>
+    <!-- 父节点中使用line-height，使内容进行上下居中，但是内容div不能设置高度 -->
+    <div style="line-height: 200px;">
+        <div id="div2">hello world !!!</div>
+    </div>
+    <div id="div3">
+        hello world !!!
+    </div>
+    <div>
+        <img src="./1.jpg"/>
+    </div>
+</body>
+
+</html>
