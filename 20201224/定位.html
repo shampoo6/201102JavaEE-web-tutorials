@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 定位：用于给元素确定页面中的位置 */
+
+        /* 定位分为三类：
+            绝对定位
+            相对定位
+            相对窗口固钉
+         */
+
+        .container {
+            height: 3000px;
+            width: 3000px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: yellowgreen;
+            /* 使用绝对定位 */
+            position: absolute;
+            /* 使用定位以后，通过调整 top bottom left right 的大小来移动元素 */
+            /* top bottom left right 分别代表元素距离窗口的上下左右边的距离 */
+            /* 注意：top 和 bottom 不要同时出现，left right 不要同时出现 */
+            /* 通常我们使用 top 和 left 进行定位 */
+            top: 50px;
+            /* bottom: 0; */
+            left: 150px;
+            /* right: 0; */
+        }
+
+        .box2 {
+            background-color: tomato;
+
+            /* 使用相对窗口固钉 */
+            /* 使用fixed将元素固定在窗口上，无论页面如何滚动，其和窗口上下左右的边距都不会改变 */
+            /* 同样可以使用 top bottom left right 进行位置设置，设置方法和绝对定位相同 */
+            position: fixed;
+        }
+
+        .box3 {
+            background-color: turquoise;
+
+            position: absolute;
+            top: 300px;
+            left: 300px;
+
+            width: 200px;
+            height: 200px;
+        }
+
+        .box3-1 {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+
+            /* 使用相对定位 */
+            /* 相对定位不会让元素浮出文档 */
+            /* 和绝对定位相同，使用 top bottom left right 修改元素位置 */
+            /* 相对定位的原点，即是其初始位置，在该点上 top bottom left right 的值均为 0 */
+            position: relative;
+            top: 0;
+            left: -50px;
+        }
+
+        .box4 {
+            background-color: blue;
+            position: absolute;
+            top: 500px;
+
+            /* z-index: 可以给定位的元素进行分层 */
+            /* z-index数值越大，就越显示在前面 */
+            /* z-index数值越小，就越显示在下面 */
+            z-index: 1;
+        }
+
+        .box5 {
+            background-color: chocolate;
+            position: absolute;
+            top: 500px;
+            left: 50px;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">
+            1
+        </div>
+        <div class="box box2">
+            2
+        </div>
+        <div class="box box3">
+            <div>3</div>
+            <div class="box3-1"></div>
+            <div>4</div>
+        </div>
+
+        <div>
+            <div class="box4 box">4</div>
+        </div>
+        <div class="box5 box">5</div>
+    </div>
+</body>
+
+</html>
