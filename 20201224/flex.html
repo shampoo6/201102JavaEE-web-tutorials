@@ -3,7 +3,7 @@
     <head>
         <style>
             /* 
-                参考: 
+                参考: http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
              */
 
             /* 什么是flex：flex是一组专门用于布局的css样式 */
@@ -63,11 +63,21 @@
             }
 
             .container2 {
+                width: 600px;
+                height: 600px;
 
+                border: 5px solid green;
+
+                display: flex;
+                justify-content: stretch;
             }
 
             .item2 {
-
+                margin: 15px;
+                border: 5px solid black;
+                width: 100px;
+                height: 100px;
+                flex-grow: 1;
             }
         </style>
     </head>
