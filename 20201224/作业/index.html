@@ -8,7 +8,7 @@
         }
 
         body {
-            background-color: #e7e7e7;
+            background-color: #e3e3e3;
         }
 
         img {
@@ -16,61 +16,86 @@
         }
 
         .card {
-            width: 290px;
+            width: 315px;
             height: 500px;
-            background-color: white;
-            padding: 20px;
+            background: white;
         }
 
         .title {
-            display: inline-block;
-            font-size: 32px;
-            font-weight: bolder;
-            margin-bottom: 20px;
+            height: 64px;
+            padding-left: 24px;
+            padding-top: 24px;
         }
 
-        .arrow {
-            display: inline-block;
+        .title>div {
+            float: left;
+        }
+
+        .title>div:nth-of-type(1) {
+            font-weight: bolder;
+            font-size: 32px;
+        }
+
+        .title>div:nth-of-type(2) {
+            margin-top: 15px;
+            margin-left: 5px;
             width: 16px;
             height: 16px;
             background-image: url(./jd/sprite.png);
             background-position-x: -16px;
         }
 
-        .arrow:hover {
-            background-position-x: 0;
+        .tag-group {
+            height: 50px;
+            padding-left: 24px;
         }
 
-        .tab {
-            display: inline-block;
-            background-color: #e7e7e7;
-            color: #969696;
+        .tag-group>div {
+            float: left;
+            background-color: #e3e3e3;
+            color: #838383;
+            border-radius: 1em;
             font-size: 12px;
-            border-radius: 12px;
             padding: 5px 10px;
+            margin-right: 5px;
         }
 
-        .list-item {
-
+        .goods-list {
+            height: 500px;
         }
 
-        .list-item div {
-            display: inline-block;
+        .goods-item {
+            height: 100px;
+            padding-left: 22px;
+            margin-bottom: 16px;
         }
-        
-        .list-item>div:nth-of-type(1) {
+
+        .goods-item>div {
+            float: left;
+        }
+
+        .rank-icon {
+            margin-top: 25px;
             width: 32px;
-            height: 46px;
-            background-image: url(./jd/No1.png);
-            background-size: contain;
+            height: 64px;
             background-repeat: no-repeat;
+            background-size: contain;
+            color: white;
+            text-align: center;
+            font-size: 12px;
         }
 
-        .list-item>div:nth-of-type(2) {
-            width: 90px;
+        .rank-icon>div:nth-of-type(2) {
+            margin-top: 5px;
         }
-        .list-item>div:nth-of-type(3) {
-            
+
+        .goods-item>div:nth-of-type(2) {
+            width: 100px;
+            margin-left: 10px;
+        }
+
+        .goods-item>div:nth-of-type(3) {
+            margin-top: 34px;
         }
     </style>
 </head>
@@ -79,21 +104,51 @@
     <!-- card -->
     <div class="card">
         <!-- title -->
-        <div>
-            <span class="title">排行榜</span>
-            <div class="arrow"></div>
+        <!-- 先调整盒子内部的样式，再调整title整体的样式 -->
+        <div class="title">
+            <div>排行榜</div>
+            <div></div>
         </div>
-        <!-- tabs -->
-        <div>
-            <div class="tab">大家电</div>
-            <div class="tab">面部护肤</div>
-            <div class="tab">休闲食品</div>
+        <!-- tags group -->
+        <div class="tag-group">
+            <div>大家电</div>
+            <div>面部护肤</div>
+            <div>休闲食品</div>
         </div>
-        <!-- rank list -->
-        <div>
-            <div class="list-item rv">
-                <div>01</div>
-                <div><img src="./jd/goods01.jpg"/></div>
+        <!-- goods list -->
+        <div class="goods-list">
+            <!-- list item -->
+            <div class="goods-item">
+                <!-- rank icon -->
+                <div class="rank-icon" style="background-image:url(./jd/No1.png)">
+                    <div>Top</div>
+                    <div>01</div>
+                </div>
+                <!-- goods image -->
+                <div><img src="./jd/goods01.jpg" /></div>
+                <!-- goods desc -->
+                <div>商品名称商品名称</div>
+            </div>
+            <div class="goods-item">
+                <!-- rank icon -->
+                <div class="rank-icon" style="background-image:url(./jd/No2.png)">
+                    <div>Top</div>
+                    <div>01</div>
+                </div>
+                <!-- goods image -->
+                <div><img src="./jd/goods02.png" /></div>
+                <!-- goods desc -->
+                <div>商品名称商品名称</div>
+            </div>
+            <div class="goods-item">
+                <!-- rank icon -->
+                <div class="rank-icon" style="background-image:url(./jd/No3.png)">
+                    <div>Top</div>
+                    <div>01</div>
+                </div>
+                <!-- goods image -->
+                <div><img src="./jd/goods03.jpg" /></div>
+                <!-- goods desc -->
                 <div>商品名称商品名称</div>
             </div>
         </div>
