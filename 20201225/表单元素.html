@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form method="get" action="http://www.baidu.com">
+            <!-- 要让用户录入数据，就需要用到表单元素 -->
+
+            <!-- 表单元素有哪些？
+                label input select textarea button
+            -->
+
+            <!-- label: 标签，起到提示用户录入，辅助用户输入的作用 -->
+            <div>
+                <!-- 使用label包裹其他的表单元素 -->
+                <label>姓名：<input/></label><br/>
+                <!-- 使用label的for属性可以和其他表单元素的id属性进行关联 -->
+                <label for="my-name-input">姓名：</label><input id="my-name-input"/>
+            </div>
+
+            <!-- input: 输入框，用于录取用户输入 -->
+            <div>
+                <!-- 输入框使用type属性来确定输入的类型 -->
+                <!-- 文本 -->
+                <!-- 使用placeholder属性可以进行占位 -->
+                <label>文本输入框：<input type="text" placeholder="请输入"/></label><br/>
+                <label>数字输入框：<input type="number"/></label><br/>
+                <label>密码框：<input type="password"/></label><br/>
+            </div>
+
+            <div>
+                <!-- 单选 -->
+                <!-- 单选由如下属性构成：
+                    type=radio ：显示成单选框
+                    name：提交数据时的参数名称，同时可以给单选框进行分组，相同name的input会被归为一组
+                    value：给服务器提交的数据
+                    checked: 默认勾选项
+                -->
+                性别：
+                <label>男<input type="radio" name="sex" value="male"/></label>
+                <label>女<input checked type="radio" name="sex" value="female"/></label>
+                <label>其他<input type="radio" name="sex" value="other"/></label>
+            </div>
+
+            <!-- 提交 -->
+            <input type="submit"/>
+        </form>
+    </body>
+</html>

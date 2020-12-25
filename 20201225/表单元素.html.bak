@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p>表单元素</p>
+        <form>
+            <!-- label 标签 -->
+            <label>姓名：<input value="5" placeholder="请输入" /></label><br/>
+
+            <label for="name-input">姓名：</label><input id="name-input"/><br/>
+
+            <!-- 输入框 -->
+            <!-- type: text number password button submit file -->
+            <label>账号：<input type="text"/></label>
+
+            <!-- 单选框 -->
+
+            <!-- 多选框 -->
+
+            <!-- 文件 -->
+
+            <!-- 按钮 -->
+
+            <div>
+                <label>所在国家：
+                    <select multiple>
+                        <option value="zhongguo">中国</option>
+                        <option value="miguo">米国</option>
+                    </select>
+                </label>
+            </div>
+
+            <!--  -->
+
+        </form>
+    </body>
+</html>
