@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 伪元素：在页面上显示的但不是一个标签的元素 */
+
+        /* 作用：用与显示一些内容在页面上，和标签一样 */
+
+        .rv {
+            border: 1px solid red;
+        }
+
+        .box1 {
+            display: flex;
+            align-items: center;
+            width: 300px;
+            height: 60px;
+        }
+
+        /* ::before 伪元素before，显示在元素内容里，位于元素本体前 */
+        /* 默认情况是一个行内元素 */
+        /* 伪元素before，除了内容只能是文本以外，其余操作和普通元素相同 */
+        .box1::before {
+            display: block;
+
+            /* 文本内容，没有content伪元素就消失了 */
+            content: '';
+            width: 50%;
+            border-bottom: 3px dashed greenyellow;
+        }
+
+        /* ::after 为元素after，显示在元素内容里，位于元素本体后 */
+        /* after的其他性质和before相同 */
+        .box1::after {
+            display: block;
+            content: '';
+            width: 50%;
+            border-bottom: 3px dashed greenyellow;
+        }
+
+        .box2 {
+            text-align: center;
+            width: 300px;
+            height: 60px;
+        }
+
+        .box2::before {
+            content: '';
+            display: inline-block;
+            width: 100px;
+            border-top: 1px dashed blueviolet;
+            /* 可以使用绝对定位调整位置，也可以使用margin调整位置 */
+            position: relative;
+            top: 11px;
+            float: left;
+        }
+
+        .box2::after {
+            content: '';
+            display: inline-block;
+            width: 100px;
+            border-top: 1px dashed blueviolet;
+            position: relative;
+            top: 11px;
+            float: right;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 采用flex布局 -->
+    <div class="box1 rv">
+        <img width="50" src="./1.jpg" />
+    </div>
+
+    <div class="box2 rv">
+        content
+    </div>
+</body>
+
+</html>
