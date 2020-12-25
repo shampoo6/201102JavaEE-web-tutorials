@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- form表单: 多用录入用户信息，提交数据给服务器 -->
+
+    <!-- method属性：规定了http协议中的请求方法（request method） -->
+    <!-- 待选项有：post 和 get -->
+    <!-- action属性：提交数据的地址 -->
+    <p>基础的表单</p>
+
+    <form method="get" action="http://www.baidu.com">
+        <!-- 将可交互元素放在form表单中，否则可交互元素的数据就不会被提交给服务器 -->
+        <input />
+        <!-- 在表单中的按钮，点击以后默认会跳转到action所在的地址 -->
+        <button>提交</button>
+    </form>
+
+    <p>提交数据</p>
+    <form method="get" action="http://www.baidu.com">
+        <!-- 要提交数据，需要在交互元素上写上name属性 -->
+        <input name="kw" />
+        <button>提交</button>
+    </form>
+
+    <!-- label 标签 -->
+    <p>label</p>
+    <form method="get" action="http://www.baidu.com">
+        <!-- label: 标签，起到提示用户录入，辅助用户输入的作用 -->
+        <div>
+            <!-- 使用label包裹其他的表单元素 -->
+            <label>姓名：<input /></label><br />
+            <!-- 使用label的for属性可以和其他表单元素的id属性进行关联 -->
+            <label for="my-name-input">姓名：</label><input id="my-name-input" />
+        </div>
+    </form>
+
+    <!-- fieldset 字段集 -->
+    <!-- 作用：给表单项进行分组 -->
+    <p>字段集</p>
+    <form method="get" action="http://www.baidu.com">
+        <fieldset style="width: 300px;">
+            <!-- 字段集名称 -->
+            <legend>用户信息</legend>
+            <!-- 使用label包裹其他的表单元素 -->
+            <label>姓名：<input /></label><br />
+            <!-- 使用label的for属性可以和其他表单元素的id属性进行关联 -->
+            <label for="my-name-input">姓名：</label><input id="my-name-input" />
+        </fieldset>
+    </form>
+</body>
+
+</html>

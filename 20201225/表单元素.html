@@ -6,7 +6,7 @@
             <!-- 要让用户录入数据，就需要用到表单元素 -->
 
             <!-- 表单元素有哪些？
-                label input select textarea button
+                input select textarea button
             -->
 
             <!-- label: 标签，起到提示用户录入，辅助用户输入的作用 -->
@@ -56,7 +56,38 @@
             <div>
                 <!-- 输入文件 -->
                 <!-- type=file即可 -->
-                <label>上传文件：<input type="file"/></label>
+                <label>上传文件：<input name="f" type="file"/></label>
+            </div>
+
+            <!-- 下拉选择框 -->
+            <div>
+                <!-- 下拉框使用select -->
+                <!-- select 和 option 联用，成对出现缺一不可 -->
+                <!-- option中，标签体的内容会显示在下拉框里 -->
+                <!-- option的value会提交到服务器上 -->
+                <!-- 如果要上传服务器，需要在select上添加name属性 -->
+                <!-- 可以在select上加入multiple属性，使select变成多选 -->
+                <label>
+                    所在国家：
+                    <select multiple name="country">
+                        <option value="zhongguo">中国</option>
+                        <option value="riben">日本</option>
+                        <option value="chaoxian">朝鲜</option>
+                        <option value="miguo">米国</option>
+                        <option value="maoxiongguo">毛熊国</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <!-- 文本域 -->
+                <!-- 文本域中rows属性决定了默认行高 -->
+                <!-- 可以在文本域的标签体中输入默认内容 -->
+                <!-- 文本域中的文本回车等特殊字符，会被进行urlencode -->
+                <label>
+                    简介：
+                    <textarea name="descption" rows="4">这是初始内容</textarea>
+                </label>
             </div>
 
             <!-- 按钮 -->
