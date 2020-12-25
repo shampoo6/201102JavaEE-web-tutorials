@@ -22,9 +22,9 @@
                 <!-- 输入框使用type属性来确定输入的类型 -->
                 <!-- 文本 -->
                 <!-- 使用placeholder属性可以进行占位 -->
-                <label>文本输入框：<input type="text" placeholder="请输入"/></label><br/>
+                <label>文本输入框：<input type="text" value="这是默认的文本"/></label><br/>
                 <label>数字输入框：<input type="number"/></label><br/>
-                <label>密码框：<input type="password"/></label><br/>
+                <label>密码框：<input type="password" placeholder="请输入"/></label><br/>
             </div>
 
             <div>
@@ -41,7 +41,30 @@
                 <label>其他<input type="radio" name="sex" value="other"/></label>
             </div>
 
+            <div>
+                <!-- 多选 -->
+                <!-- 多选框和单选框写法类似 -->
+                <!-- 不同点在于：
+                    type=checkbox
+                    可以选择多项，且可以取消选择
+                -->
+                爱好：
+                <label><input type="checkbox" name="hobby" value="peace"/>和平</label>
+                <label><input type="checkbox" checked name="hobby" value="love"/>爱</label>
+            </div>
+
+            <div>
+                <!-- 输入文件 -->
+                <!-- type=file即可 -->
+                <label>上传文件：<input type="file"/></label>
+            </div>
+
+            <!-- 按钮 -->
+            <!-- type=button 会显示成按钮 value属性会显示成按钮中的文字 -->
+            <input type="button" value="按钮"/>
+
             <!-- 提交 -->
+            <!-- type=submit 会显示提交按钮 -->
             <input type="submit"/>
         </form>
     </body>
