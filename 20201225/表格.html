@@ -3,11 +3,22 @@
 
 <head>
     <style>
+        .beauty-table {
+            border: 3px double yellow;
+            background-color: blue;
+        }
+
         .beauty-table td {
-            padding: 5px;
-            width: 100px;
-            height: 100px;
-            vertical-align: top;
+            display: inline-block;
+            text-align: center;
+            vertical-align: center;
+            /* width: 50px; */
+            line-height: 50px;
+            border: 1px dashed red;
+            background-color: green;
+            color: white;
+            margin: 4px;
+            border-radius: 25px;
         }
     </style>
 </head>
@@ -78,7 +89,7 @@
     <p>合并单元格</p>
     <!-- 使用rowspan进行跨行，也就是纵向合并 -->
     <!-- 使用colspan进行跨列，也就是横向合并 -->
-    <table border> 
+    <table border>
         <tr>
             <td>id</td>
             <td>姓名</td>
@@ -104,7 +115,9 @@
         cellpadding属性 -- 控制每个格子的内边距
         cellspacing -- 控制格子之间的距离 
     -->
-    <!-- <table class="beauty-table" border> 
+    <!-- 表格的属性 -->
+    <p>表格的属性</p>
+    <table cellpadding="10" cellspacing="20" border>
         <tr>
             <td>id</td>
             <td>姓名</td>
@@ -117,7 +130,24 @@
             <td>1</td>
             <td>2</td>
         </tr>
-    </table> -->
+    </table>
+
+    <!-- 自定义表格样式 -->
+    <p>自定义表格样式</p>
+    <table class="beauty-table">
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
 </body>
 
 </html>
