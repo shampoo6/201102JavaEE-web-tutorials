@@ -1,67 +1,123 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
 
-        </style>
-    </head>
-    <body>
-        <!-- 使用 table 构建表格 -->
-        <table border>
-            <!-- tr 代表行 -->
-            <tr>
-                <!-- td 代表列 -->
-                <td>id</td>
-                <td>姓名</td>
-            </tr>
-            <tr>
-                <!-- td 代表列 -->
-                <td>1</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <!-- td 代表列 -->
-                <td>1</td>
-                <td>2</td>
-            </tr>
-        </table>
+<head>
+    <style>
+        .beauty-table td {
+            padding: 5px;
+            width: 100px;
+            height: 100px;
+            vertical-align: top;
+        }
+    </style>
+</head>
 
-        <!-- 增加表头和表体 -->
-        <table border>
-            <!-- 表头 -->
-            <thead>
-                <tr>
-                    <!-- 表头项 -->
-                    <th>id</th>
-                    <th>姓名</th>
-                    <th>性别</th>
-                    <th>年龄</th>
-                </tr>
-            </thead>
-            <!-- 表体 -->
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>张三</td>
-                    <td>男</td>
-                    <td>22</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>李四</td>
-                    <td>女</td>
-                    <td>16</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>王麻子</td>
-                    <td>男</td>
-                    <td>32</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                
-            </tfoot>
-        </table>
-    </body>
+<body>
+    <!-- 使用 table 构建表格 -->
+    <!-- border 增加边框 -->
+    <p>极简表格</p>
+    <table border>
+        <!-- tr 代表行 -->
+        <tr>
+            <!-- td 代表列 -->
+            <td>id</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <!-- td 代表列 -->
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <!-- td 代表列 -->
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <!-- 增加表头和表体 -->
+    <p>分段表格 （thead tbody tfoot）</p>
+    <table border>
+        <!-- 表头 -->
+        <thead>
+            <tr>
+                <!-- 表头项 -->
+                <th>id</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <!-- 表体 -->
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>张三</td>
+                <td>男</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>李四</td>
+                <td>女</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>王麻子</td>
+                <td>男</td>
+                <td>32</td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+    <!-- 合并单元格 -->
+    <p>合并单元格</p>
+    <!-- 使用rowspan进行跨行，也就是纵向合并 -->
+    <!-- 使用colspan进行跨列，也就是横向合并 -->
+    <table border> 
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+            <td>性别</td>
+        </tr>
+        <tr>
+            <!-- rowspan的值，代表要跨越几行 -->
+            <td rowspan="2">1</td>
+            <!-- colspan的值，代表要跨越几列 -->
+            <td colspan="2">2</td>
+            <!-- 由于同一行的第二列跨了两列，所以第三列需要注释掉 -->
+            <!-- <td>3</td> -->
+        </tr>
+        <tr>
+            <!-- 由于上一行的第一列跨行到了此行，所以此行的第一列就需要注释掉 -->
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <!-- 
+        cellpadding属性 -- 控制每个格子的内边距
+        cellspacing -- 控制格子之间的距离 
+    -->
+    <!-- <table class="beauty-table" border> 
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table> -->
+</body>
+
 </html>
