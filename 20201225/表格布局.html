@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        .t-head {
+            height: 60px;
+            text-align: center;
+        }
+
+        .t-foot {
+            height: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 至今位置的布局方式：
+        div+css布局: 使用float，position css样式，配合div盒子进行布局
+        flex布局：使用css的flexbox进行布局
+    -->
+
+    <!-- 之所以使用表格进行布局，是因为表格天然自带的几个特点
+        自带三段式
+        表格是由行列组成的网格(grid)，且可以进行跨行和跨列，有利于页面布局
+    -->
+    <table border>
+        <thead>
+            <tr>
+                <td class="t-head" colspan="32">1</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4">2</td>
+                <!-- <td>2</td>
+                <td>2</td>
+                <td>2</td> -->
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="t-foot" colspan="32">3</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
