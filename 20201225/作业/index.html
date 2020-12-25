@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            border: 3px solid red;
+        }
+
+        .msg-box {
+            border: 1px solid black;
+            width: 300px;
+            height: 250px;
+        }
+
+        .msg-box::before {
+            content: '这是来自未来的信息';
+            display: block;
+            font-size: 24px;
+            color: gray;
+        }
+
+        .msg-box::after {
+            content: '';
+            display: block;
+            /* background-color: green; */
+            width: 0;
+            height: 0;
+            margin-left: 65px;
+            /* border-top: 17px solid green;
+            border-bottom: 17px solid rgba(0, 0, 0, 0);
+            border-left: 17px solid green;
+            border-right: 17px solid rgba(0, 0, 0, 0); */
+
+            border-color: red transparent transparent yellow;
+            border-width: 17px;
+            border-style: solid;
+        }
+
+        .msg-box>div {
+            width: calc(100%-15px);
+            height: 125px;
+            background-color: green;
+            border-radius: 25px;
+            color: indianred;
+            font-size: 18px;
+            padding-top: 65px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 红线框 -->
+    <div class="container">
+        <div class="msg-box">
+            <div>你好，今天天气真不错！</div>
+        </div>
+    </div>
+</body>
+
+</html>
