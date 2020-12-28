@@ -22,6 +22,17 @@
             font-size: 24px;
         }
 
+        /* 属性选择器 */
+        form input[name='name'] {
+            color: white;
+            background-color: blue;
+        }
+
+        form input[name='age'] {
+            color: yellow;
+            background-color: red;
+        }
+
         /* 可以将多个选择器用逗号隔开，套用相同的css样式 */
         /* #id-selector, .my-class, .my-font {
                 background-color: #ccc;
@@ -144,6 +155,12 @@
     <div class="my-class my-font my-class2">class2选择器</div>
     <span class="my-class">class3选择器</span>
     <p class="my-class">class4选择器</p>
+
+    <!-- 属性选择器demo -->
+    <form>
+        <label>姓名<input name="name" /></label>
+        <label>年龄<input name="age" /></label>
+    </form>
 
     <div class="my-list-container">
         <div>

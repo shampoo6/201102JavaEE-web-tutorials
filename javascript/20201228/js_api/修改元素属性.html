@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .bg {
+            background-color: #696969;
+        }
+
+        .color1 {
+            color: greenyellow;
+        }
+
+        .color2 {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color1 bg">
+        hello world!!!
+    </div>
+
+    <button>修改样式</button>
+</body>
+<script>
+    // 获取元素
+    let div = document.querySelector('div')
+    console.dir(div)
+
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', () => {
+        // 通过style属性可以修改css的任意样式
+        div.style.color = 'rgb(248, 47, 255)'
+        div.style.backgroundColor = '#03009b'
+    })
+</script>
+
+</html>

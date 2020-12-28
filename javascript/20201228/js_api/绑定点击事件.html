@@ -5,6 +5,8 @@
 
 <body>
     <button>点我</button>
+    <!-- 在标签上绑定点击事件 -->
+    <button onclick="myOnClickHandler()">点我2</button>
 </body>
 <script>
     // 获取按钮元素
@@ -31,6 +33,10 @@
     btn.addEventListener('click', () => {
         console.log('点击事件触发的匿名函数')
     })
+
+    function myOnClickHandler() {
+        console.log('myOnClickHandler 事件处理程序被调用了')
+    }
 </script>
 
 </html>
