@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button>点我</button>
+</body>
+<script>
+    // 获取按钮元素
+    let btn = document.querySelector('button')
+
+    // 添加事件监听器
+
+    let callback1 = function () {
+        // 按钮点击以后，触发的内容，写在这里
+        console.log('这是按钮触发的 callback1')
+    }
+
+    let callback2 = function () {
+        console.log('这是按钮触发的 callback2')
+    }
+
+    // addEventListener 接收两个参数
+    // 第一个：事件名称
+    // 第二个：事件触发的回调函数
+
+    // 使用 addEventListener 可以绑定多个事件处理程序
+    btn.addEventListener('click', callback1)
+    btn.addEventListener('click', callback2)
+    btn.addEventListener('click', () => {
+        console.log('点击事件触发的匿名函数')
+    })
+</script>
+
+</html>
