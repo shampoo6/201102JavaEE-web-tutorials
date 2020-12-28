@@ -3,7 +3,8 @@
 
 <head></head>
 
-<body></body>
+<body>
+</body>
 <script>
     // 函数是什么？可以理解成一个打印机，你给一个输入，它会给你一个输出
     // 所以函数的本质就是给他一个输入，经过开发人员定义的一个逻辑流程后，产生一个输出，这样的工具就是函数
@@ -101,6 +102,24 @@
     // }
 
     console.log(power(2))
+
+    // this 关键字
+    // this代表当前作用域对象
+
+    console.log(this)
+
+    function Car() {
+        this.name = 'toyota'
+        console.log(this)
+        this.run = () => {
+            console.log(this)
+            console.log(this.name)
+            console.log('car is running')
+        }
+    }
+
+    let c = new Car()
+    c.run()
 
 </script>
 
