@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+
+<script>
+    // 计算器
+    // 定义计算器类
+    function Calc() {
+        // 加
+        this.add = (a, b) => {
+            return a + b
+        }
+
+        // 减
+        this.sub = (a, b) => {
+            return a - b
+        }
+
+        // 乘
+        this.mul = (a, b) => {
+            return a * b
+        }
+
+        // 除
+        this.div = (a, b) => {
+            return a / b
+        }
+    }
+
+    // 实例化对象
+    let c = new Calc()
+    console.log(c.add(1, 2))
+    console.log(c.sub(1, 2))
+    console.log(c.mul(1, 2))
+    console.log(c.div(1, 2))
+</script>
+
+</html>

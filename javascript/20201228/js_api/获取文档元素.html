@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="text1">
+            hello text1!!!
+        </div>
+        <div class="text2">
+            hello text2!!!
+        </div>
+        <div class="text2">
+            hello text2!!!
+        </div>
+    </body>
+    <script>
+        // 获取文档元素
+        // 通过 id 获取
+
+        // document代表整个文档对象
+        // 该函数作用：通过id属性获取文档中的元素
+        let element = document.getElementById('text1')
+        console.dir(element)
+
+        // 通过 class 获取
+        let elements = document.getElementsByClassName('text2')
+        console.log(elements)
+
+        // 通过标签名获取
+        elements = document.getElementsByTagName('div')
+        console.log(elements)
+
+        // 通过选择器获取元素
+
+        // 该方法可以通过css选择器查询单个元素
+        element = document.querySelector('#text1')
+        console.dir(element)
+
+        // 该方法可以查询符合选择器的所有元素
+        elements = document.querySelectorAll('div')
+        console.log(elements)
+
+        elements = document.querySelectorAll('.text2')
+        console.log(elements)
+    </script>
+</html>
