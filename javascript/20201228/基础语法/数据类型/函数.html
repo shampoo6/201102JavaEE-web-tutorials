@@ -76,6 +76,32 @@
     console.log(result)
 
 
+    // 定义一个减法函数，然后函数中最后一行代码存放运算结果，
+
+    // 然后调用函数，获取其返回值，打印结果并观察
+
+    function sub(x, y) {
+        // 代码中没有retrun
+        let result = x - y
+    }
+
+    // 由于sub没有返回值
+    // 所以sub调用的结果给result赋值后，result为undefined
+    result = sub(10, 5)
+    console.log(result)
+
+    // lamda 表达式，也叫箭头函数
+    let power = (n) => {
+        return n * n
+    }
+
+    // 以上代码等价于：
+    // let power = function(n) {
+    //     return n * n
+    // }
+
+    console.log(power(2))
+
 </script>
 
 </html>
