@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 在html文档中，由于js写在script标签中，所以js的执行顺序取决于标签的先后顺序 -->
+    <script src="../helloworld.js"></script>
+
+    <!-- 如果使用的js库，引用了其他的js库，那么必须按照依赖的引用顺寻进行script标签的引入 -->
+    <!-- <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="ace-admin.js"></script> -->
+
+    <script>
+        // js代码内的执行顺序
+        // 从上到下，从左到右
+        console.log(0);
+
+        console.log('hello'); console.log('你好'); console.log('!!!');
+        console.log('world'); console.log('世界'); console.log('！！！');
+
+    </script>
+
+    <script>
+        console.log(1);
+    </script>
+</head>
+
+<body>
+    <script>
+        console.log(2);
+    </script>
+
+    <script>
+        console.log(2.1);
+    </script>
+</body>
+
+<script>
+    console.log(3);
+</script>
+
+<script>
+    console.log(3.1);
+</script>
+
+</html>
