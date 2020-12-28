@@ -29,6 +29,53 @@
     // 调用有参函数
     // 此处传入的参数是实际参数
     saySomething('我', '你好啊')
+
+    // 关于参数长度，调用参数时，可以少传参数，也可以多传参数
+    function myMthod(a, b, c) {
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
+
+    // 作用域
+    // 作用域指的是变量的有效可访问范围
+
+    // 全局作用域
+    // 全局定义的变量，作用域为全局，整个项目中任何位置都能访问该变量
+    worldVar = 123
+
+    // 局部作用域
+    // 作用在局部代码块中的作用范围
+    function fn() {
+        let x = 1
+        console.log(x)
+
+        // 在局部代码块中访问全局变量
+        console.log(worldVar)
+        // 全局变量在任何位置都能定义
+        worldVar2 = 'abc'
+    }
+
+    fn()
+
+    console.log(worldVar2)
+
+    // 此处调用x会报错，如下：
+    // Uncaught ReferenceError: x is not defined
+    // console.log(x)
+
+
+    // 定义函数2
+    // 可以使用变量赋值的方法定义函数
+    let add = function (x, y) {
+        // 返回值
+        return x + y
+    }
+
+    let result = add(1, 2)
+    console.log(result)
+
+
 </script>
 
 </html>
