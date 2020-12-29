@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            background-color: blueviolet;
+            width: 300px;
+            line-height: 200px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span style="font-weight: bolder;">hello world!!!</span>
+        <input/>
+        <button>按钮</button>
+        <textarea></textarea>
+    </div>
+</body>
+
+<script>
+    // value
+    // value可以用于修改表单元素的值
+
+    // 对非表单元素使用value， value值为 undefined
+    let box = document.querySelector('.box')
+    let input = document.querySelector('.box>input')
+    let btn = document.querySelector('.box>button')
+    let textarea = document.querySelector('.box>textarea')
+</script>
+
+</html>
