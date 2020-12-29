@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            background-color: blueviolet;
+            width: 300px;
+            line-height: 200px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span style="font-weight: bolder;">hello world!!!</span>
+        <input/>
+        <button>按钮</button>
+        <textarea></textarea>
+    </div>
+
+    <form>
+        <fieldset>
+            <legend>下拉框</legend>
+            <label>国籍：
+                <select class="m-select" name="country">
+                    <option value="zhongGuo">中国</option>
+                    <option value="miGuo">米国</option>
+                    <option value="aSanGuo">阿三国</option>
+                    <option value="yueNan">越南</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>单选</legend>
+            性别：
+            <label>男：<input class="male" type="radio" value="male" name="sex"/></label>
+            <label>女：<input class="female" type="radio" value="female" name="sex"/></label>
+            <label>其他：<input class="other" type="radio" value="other" name="sex"/></label>
+        </fieldset>
+        <fieldset>
+            <legend>多选</legend>
+            爱好：
+            <label>画画：<input class="paint" type="checkbox" value="paint" name="hobby"/></label>
+            <label>跳舞：<input class="dance" type="checkbox" value="dance" name="hobby"/></label>
+            <label>唱歌：<input class="sing" type="checkbox" value="sing" name="hobby"/></label>
+        </fieldset>
+        <input type="submit"/>
+    </form>
+</body>
+
+<script>
+    // value
+    // value可以用于修改表单元素的值
+
+    // 对非表单元素使用value， value值为 undefined
+    let box = document.querySelector('.box')
+    let input = document.querySelector('.box>input')
+    let btn = document.querySelector('.box>button')
+    let textarea = document.querySelector('.box>textarea')
+    
+    // checked
+    // 使用 checked 属性，可以设置单选框或多选框是否勾选
+    // 修改单选框的value值，会修改传递参数时的值，但不会直接影响其是否被选中
+    let maleInput = document.querySelector('.male')
+    // 单选框中如果一组选项中，其中一个的checked被置为true，其余选项会自动置为false
+</script>
+
+</html>
