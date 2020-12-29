@@ -5,10 +5,14 @@
     <style>
         .box {
             background-color: blueviolet;
-            width: 300px;
+            width: 500px;
             line-height: 200px;
             color: white;
             text-align: center;
+        }
+
+        .box1 {
+            height: 200px;
         }
     </style>
 </head>
@@ -49,6 +53,11 @@
         </fieldset>
         <input type="submit"/>
     </form>
+
+    <p>innerText innerHTML</p>
+    <div class="box box1">
+        
+    </div>
 </body>
 
 <script>
@@ -60,12 +69,26 @@
     let input = document.querySelector('.box>input')
     let btn = document.querySelector('.box>button')
     let textarea = document.querySelector('.box>textarea')
+
+    console.log(box.value) // 此处打印出undefined
+    console.log(input.value) // 可以通过访问value进行读值和写值
+    input.value = '这是js赋值的内容'
     
     // checked
     // 使用 checked 属性，可以设置单选框或多选框是否勾选
     // 修改单选框的value值，会修改传递参数时的值，但不会直接影响其是否被选中
     let maleInput = document.querySelector('.male')
     // 单选框中如果一组选项中，其中一个的checked被置为true，其余选项会自动置为false
+    console.log(maleInput.checked)
+    maleInput.checked = true // checked值为bool型，true为勾选，false为不勾选
+
+    // innerText
+    // 作用：在元素标签体中插入文本信息
+    document.querySelector('.box1').innerText = '<a href="http://www.baidu.com">baidu</a>'
+    
+    // innerHTML
+    // 作用：在元素标签体中插入html文档
+    document.querySelector('.box1').innerHTML = '<a href="http://www.baidu.com">baidu</a>'
 </script>
 
 </html>
