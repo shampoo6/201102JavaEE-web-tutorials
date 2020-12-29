@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button>按钮</button>
+</body>
+<script>
+    function clickHandler() {
+        console.log('按钮被点击了')
+    }
+
+    let btn = document.querySelector('button')
+
+    // 如果在函数名后加圆括号代表调用函数
+    // 此时result为undefined
+    // btn.addEventListener('click', clickHandler())
+
+    // 此处clickHandler函数名，就是变量名
+    btn.addEventListener('click', clickHandler)
+
+    // 以log为例
+    function add(x, y) {
+        return x + y
+    }
+
+    let result = add(1, 2)
+
+    console.log(result)
+</script>
+
+</html>
