@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .color {
+            color: white;
+        }
+
+        .bg {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box color bg">
+        <table border>
+            <tr>
+                <td>1-1</td>
+                <td>1-2</td>
+                <td>1-3</td>
+            </tr>
+            <tr>
+                <td>2-1</td>
+                <td>2-2</td>
+                <td>2-3</td>
+            </tr>
+            <tr>
+                <td>3-1</td>
+                <td>3-2</td>
+                <td>3-3</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    let box = document.querySelector('.box')
+
+    // 获取元素内容宽度
+    console.log(box.clientWidth)
+    // 获取元素内容高度
+    console.log(box.clientHeight)
+
+    // 获取元素距离窗口上边和左边
+    console.log(box.offsetTop)
+    console.log(box.offsetLeft)
+
+    // 获取子节点
+    console.log(box.children)
+    // 换行符会被当作是一个节点
+    console.log(box.childNodes)
+
+    // 获取class列表
+    console.log(box.classList)
+    // 删除类
+    box.classList.remove('bg') // 参数是要删除的类名
+    // 添加类
+    box.classList.add('bg') // 参数是要添加的类名
+
+</script>
+
+</html>

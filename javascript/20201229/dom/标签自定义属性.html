@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 定义自定义属性 -->
+    <div my-data="test data">
+        hello world
+    </div>
+</body>
+<script>
+    // 什么是自定义属性？
+    // 用户可以在html元素上添加自定义的属性
+
+    let div = document.querySelector('div')
+
+    // 获取自定义属性
+    let attr = div.getAttribute('my-data') // 参数是自定义属性的名称
+    console.log(attr)
+
+    // 添加自定义属性
+    div.setAttribute('my-attr', 'test attr') // 第一个参数是属性名，第二个参数是属性值
+    // 设置的属性值始终被隐式转换为字符串
+</script>
+
+</html>
