@@ -54,6 +54,20 @@
     str = String(num) // 转换成数字的字符串表达式
     str = String(obj) // 除了 null 转后会变成字符串的 null，其余对象都会编程字符串：[object Object]
     console.log(str)
+
+    // 除了对象类型，其余类型转换成字符串时，会在其值外面直接加上引号，如：123=>'123'、true=>'true'
+    // 除了 null 和 undefined，其他对象需要通过序列化和反序列化进行转换
+    // 对象默认转换成字符串时，会显示 [object Object]
+
+    // 拼接字符串
+    let str1 = '这是一个字符串'
+    console.log(str1 + 123)
+    console.log(str1 + false)
+    console.log(str1 + {a:1})
+    console.log(str1 + null)
+    console.log(str1 + undefined)
+
+    // 拼接字符串时，不是字符串类型的变量，会隐式转换成字符串格式
 </script>
 
 </html>

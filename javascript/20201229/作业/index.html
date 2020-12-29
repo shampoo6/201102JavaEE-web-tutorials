@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        <input class="my-input"/>
-    </body>
-    <script>
-        let input = document.querySelector('.my-input')
-        console.log(input.value)
-    </script>
+
+<head></head>
+
+<body>
+    <p>请输入内容，将会自动转换成数字、布尔、对象</p>
+    <input class="data-input" type="text" placeholder="请输入" />
+    <button>转换</button>
+</body>
+<script>
+    let btn = document.querySelector('.data-input + button')
+    let input = document.querySelector('.data-input')
+    btn.addEventListener('click', () => {
+        // input框中的值value，始终是一个字符串类型
+        let value = input.value
+        // 类型转换
+        let num = Number(value)
+        console.log('数字：' + num)
+        let b = Boolean(value)
+        console.log('布尔：' + b)
+        // try catch 用于捕获异常
+        try {
+            // value 必须是json格式才能转换
+            // 此处的json格式，是.json文件的格式
+            let obj = JSON.parse(value)
+            console.log('对象：')
+            console.log(obj)
+        }catch(e){
+            console.error('输入的内容不是json格式')
+        }
+    })
+</script>
+
 </html>
