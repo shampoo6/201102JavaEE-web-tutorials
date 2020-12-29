@@ -31,6 +31,8 @@
     btn.addEventListener('click', callback1)
     btn.addEventListener('click', callback2)
     btn.addEventListener('click', () => {
+        // 使用 lamda 表达式，可以提升作用域
+        console.log(this)
         console.log('点击事件触发的匿名函数')
     })
 

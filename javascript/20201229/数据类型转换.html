@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 基础数据类型的转换
+    // bool number string object
+
+
+    // 其他类型转布尔
+
+    let b = true
+    let n = 0 // 显示转换：Boolean(n)
+    let str = ''
+    let obj = null // 对象类型，如果为null，转换后为false，其他为true
+    let u = undefined // undefined 转换成bool时，永远为false
+
+    // 对象作为bool表达式时，多用于判断该对象是否存在
+    // if(abc){
+    //     abc.name
+    // }
+
+    // if 圆括号中写的是 bool 表达式
+    if (u) {
+        console.log('结果为真')
+    } else {
+        console.log('结果为假')
+    }
+
+    // 其他类型转bool：
+    // 可以显示通过 Boolean(something) 将其他数据转换成bool类型
+    // if 表达式中，会自动进行隐式转换
+
+    // --------------------------------------------------------
+
+    // 其他类型转数字
+    // 使用 Number(something) 进行强制转换，可以转成数字
+    let num = Number(b) // true为1，false为0
+    num = Number('00021487') // 如果字符串是个数字，转换后就是数字类型，否则值为NaN（not a number）
+    // 若空字符串 '' 转数字，结果为 0
+    // 可以通过函数 isNaN 来判断变量是否不是数字
+    num = Number({})
+    // 若空 null 对象转数字，结果为 0；其余结果均为NaN
+
+    console.log(num)
+
+    // --------------------------------------------------------
+
+    // 其他类型转字符串
+    // 使用 String(something) 进行强制转换为字符串
+    str = String(b) // 强转后，bool类型会变成字符串的 true 或 false
+    str = String(num) // 转换成数字的字符串表达式
+    str = String(obj) // 除了 null 转后会变成字符串的 null，其余对象都会编程字符串：[object Object]
+    console.log(str)
+</script>
+
+</html>
