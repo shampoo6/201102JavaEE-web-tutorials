@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="btns">
+        <button>显示输入框</button>
+        <button>显示选择框</button>
+        <button>显示单选框</button>
+    </div>
+    <div class="view-container">
+
+    </div>
+</body>
+<script>
+    let inputFieldset = '<label>姓名：<input placeholder="请输入"/></label>'
+    let selectFieldset = '<label>国家：<select>' +
+        '<option>中国</option>' +
+        '<option>日本</option>' +
+        '<option>韩国</option>' +
+        '</select></label>'
+    let radioFieldset = '性别：<label><input checked name="sex" type="radio"/>男</label>' +
+        '<label><input name="sex" type="radio"/>女</label>'
+
+
+    let container = document.querySelector('.view-container')
+
+    container.innerHTML = inputFieldset
+
+    let btn1 = document.querySelector('.btns>button:nth-child(1)')
+    btn1.addEventListener('click', () => {
+        container.innerHTML = inputFieldset
+    })
+    let btn2 = document.querySelector('.btns>button:nth-child(2)')
+    btn2.addEventListener('click', () => {
+        container.innerHTML = selectFieldset
+    })
+    let btn3 = document.querySelector('.btns>button:nth-child(3)')
+    btn3.addEventListener('click', () => {
+        container.innerHTML = radioFieldset
+    })
+</script>
+
+</html>
