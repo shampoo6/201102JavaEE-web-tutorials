@@ -24,10 +24,11 @@
             </tr>
         </tbody>
     </table>
+    <button class="btn">下载文件</button>
 </body>
 <script>
     // 节点操作：操纵树状结构文档中的节点
-    // 操作包括：查找，创建，插入，删除
+    // 操作包括：查找，创建，插入，删除，替换
 
     let t = document.querySelector('.t')
 
@@ -49,6 +50,45 @@
     // 参数是要追加的元素
     document.body.appendChild(img)
 
+    // insertBefore
+    let tBody = t.children[0]
+    let tr = document.createElement('tr')
+    // 给tr标签增加td
+    tr.innerHTML = '<td>insertBefore1</td><td>insertBefore2</td><td>insertBefore3</td>'
+    // 使用insertBefore，将指定元素插入到另一个元素的指定子节点前面
+    // 第一个参数：要插入的元素
+    // 第二个参数：参考的子节点，元素会被插入到其前面
+    tBody.insertBefore(tr, tBody.children[1])
+
+    // remove
+    // 删除指定节点
+    // img.remove() // 调用remove，删除img标签
+
+    // replace
+    let img2 = document.createElement('img')
+    img2.src = './1.png'
+
+    let body = document.body
+
+    // 语法 parent.replaceChild(newNode, child)
+    // 作用：替换指定节点的子节点为另一个节点
+    // 第一个参数：新的节点
+    // 第二个参数：想要被替换的子节点
+    body.replaceChild(img2, body.children[3])
+
+    // 应用场景:
+    // 1. 动态加载脚本
+    // 2. 文件下载
+
+    document.querySelector('.btn').addEventListener('click', () => {
+        let a = document.createElement('a')
+        a.href = './1.zip'
+        document.body.appendChild(a)
+        // 模拟点击a标签
+        a.click()
+        // 开始下载后要删除a标签
+        a.remove()
+    })
 </script>
 
 </html>
