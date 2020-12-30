@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .content {
+            width: 100%;
+            height: 500px;
+            background-color: #eeccee;
+            padding: 15px;
+            overflow-y: scroll;
+        }
+
+        .n1-pop {
+            display: flex;
+            width: 100%;
+        }
+
+        .name {
+            width: 4em;
+            font-size: 24px;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .pop {
+            inline-height: 2em;
+            padding: 20px;
+            text-align: center;
+            background-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .left-arrow {
+            position: relative;
+            top: 13px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-width: 15px;
+            border-style: solid;
+            border-color: transparent green transparent transparent;
+        }
+
+        .n2-pop {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .right-arrow {
+            position: relative;
+            top: 13px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-width: 15px;
+            border-style: solid;
+            border-color: transparent transparent transparent green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <label><span class="n1">name1</span>：<input class="input1"/></label>
+    <button class="btn1" onclick="send1()">发送</button>
+    <br/>
+    <label><span class="n2">name2</span>：<input class="input2"/></label>
+    <button class="btn2" onclick="send2()">发送</button>
+    <br/>
+</div>
+<div class="content">
+    <!--<div class="n1-pop">
+        <div class="name">n1</div>
+        <div>
+            <div class="left-arrow"></div>
+        </div>
+        <div class="pop">contentcontentgaergaergaerfgntco</div>
+    </div>
+
+    <div class="n2-pop">
+        <div class="pop">contentcontentgaergaergaerfgntco</div>
+        <div>
+            <div class="right-arrow"></div>
+        </div>
+        <div class="name">n1</div>
+    </div>-->
+</div>
+</body>
+<script>
+    function qs(selector) {
+        return document.querySelector(selector)
+    }
+
+    let search = decodeURI(location.search)
+    search = search.substr(1)
+    console.log(search)
+    let splits = search.split('&')
+    let n1 = splits[0].split('=')[1]
+    let n2 = splits[1].split('=')[1]
+    qs('.n1').innerText = n1
+    qs('.n2').innerText = n2
+
+    function send1() {
+        let div = document.createElement('div')
+        div.innerHTML =
+            '<div class="n1-pop">' +
+            '<div class="name">' + n1 + '</div>' +
+            '<div>' +
+            '<div class="left-arrow"></div>' +
+            '</div>' +
+            '<div class="pop">' + qs('.input1').value + '</div>' +
+            '</div>'
+        qs('.content').appendChild(div)
+    }
+
+    function send2() {
+        let div = document.createElement('div')
+        div.innerHTML =
+            '<div class="n2-pop">' +
+            '<div class="pop">' + qs('.input2').value + '</div>' +
+            '<div>' +
+            '<div class="right-arrow"></div>' +
+            '</div>' +
+            '<div class="name">' + n2 + '</div>' +
+            '</div>'
+        qs('.content').appendChild(div)
+    }
+</script>
+</html>
