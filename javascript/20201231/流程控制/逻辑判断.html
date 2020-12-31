@@ -7,11 +7,72 @@
 <script>
     // 逻辑判断表达式
 
+    let human1 = {
+        name: 'Amy',
+        age: 16
+    }
+
+    let human2 = {
+        name: 'Bob',
+        age: 16
+    }
+
     // 使用if进行逻辑判断，圆括号中填入布尔表达式
     // 如果if语句的表达式结果为真，那么就执行其后的代码块
-    if (true) {
-        console.log('逻辑判断为真')
+    if (human1.name === 'Amy') {
+        console.log('这个人是Amy')
     }
+
+    // if else 用于进行判断如果，否则的判断
+    // 如果
+    if (human1.age > human2.age) {
+        console.log(human1.name + '的年龄比' + human2.name + '的大')
+    }
+    // 否则
+    else {
+        console.log(human1.name + '的年龄比' + human2.name + '的小或者相等')
+    }
+
+    // if  else if
+    if (human1.age >= 18) {
+        console.log(human1.name + '年龄已满18岁')
+    } else if (human1.age >= 16) {
+        console.log(human1.name + '年龄已满16岁')
+    }
+
+    // if  else if  else
+    if (human2.age <= 12) {
+        console.log(human2.name + '是个小学生')
+    } else if (human2.age <= 15) {
+        console.log(human2.name + '是个初中生')
+    } else {
+        console.log(human2.name + '已经是成年人了')
+    }
+
+    // ---------------------------------------
+    // switch 的作用，用于区分指定变量的状态
+    // 以下switch，圆括号中的参数，是需要鉴定的值
+    switch (human2.age) {
+        // switch中，由多个case语句组成
+        // case 后面跟的值，必须是一个常量
+        case 16:
+            console.log(human2.name + '已经高一了')
+            // 可以使用break跳出一个case语句
+            // 如果不跳出，将继续执行下一个case语句
+            // break;
+        case 17:
+            console.log(human2.name + '已经高二了')
+            break;
+        case 18:
+            console.log(human2.name + '已经高三了')
+            break;
+        default:
+            // 如果前面所有的case语句都判定失败，就会进入default语句
+            // default语句不是必须的
+            console.log(human2.name + '不是高中生')
+            break;
+    }
+
 </script>
 
 </html>
