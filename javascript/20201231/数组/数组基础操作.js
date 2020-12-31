@@ -75,6 +75,18 @@ let arr4 = ['hello', 'world', '!!!']
 // 参数是连结数组元素时使用的连结符号
 console.log(arr4.join('-'))
 
+// let sb = new StringBuilder()
+// sb.append('sdfsdf')
+// sb.append('sdfsdf')
+// sb.append('sdfsdf')
+// sb.toString()
+
+// 可以使用join进行类似java StringBuilder的操作
+let sb = []
+sb.push('sdfgarewf')
+sb.push('dfg')
+sb.push('sdrthsrthgfgarewf')
+sb.join('')
 
 // splice: 删除数组指定位置的元素，并可以用新元素进行替换
 // 第一个参数：起始索引
