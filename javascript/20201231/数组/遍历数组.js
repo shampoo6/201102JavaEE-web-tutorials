@@ -1,16 +1,16 @@
 // 假装有个用户数据列表如下：
 let userInfos = [
     {
-        name: '小明',
-        pwd: 'fjfjfjfjfj',
-        balance: 250,
-        info: 555
-    },
-    {
         name: '小王',
         pwd: '666666',
         balance: 1234,
         info: '消息'
+    },
+    {
+        name: '小明',
+        pwd: 'fjfjfjfjfj',
+        balance: 250,
+        info: 555
     },
     {
         name: '小李',
@@ -50,21 +50,34 @@ let newArr = userInfos.map((item, index) => {
 console.log(newArr)
 
 // sort 排序
-userInfos.sort((x1, x2) => {
-    let x1Type = typeof x1.info
-    let x2Type = typeof x2.info
-    switch (x1Type) {
+// 数组排序，有默认规则
+// 字符串数组：按照英文字母顺序，将首字母进行排序
+// 数字数组：将根据数字长度，大小进行排序
+let arr = ['ysdfgdf', 'crtu', 'a46', 'bdyj', 'fuio']
+arr = [1024, 1199, 256, 17, 2048]
+
+// 自定义排序：
+
+// 自定义规则如：object < string < number , 越小的元素，放在数组的越前面
+// sort 函数的参数叫compare，该compare函数需要返回一个数字
+// 返回值 如果小于零，就将item1排在item2的左边
+// 如果大于零，就将item1排在item2的右边
+// 如果等于零，保持item1和item2当前顺序不变
+userInfos.sort((item1, item2) => {
+    let type1 = typeof item1.info
+    let type2 = typeof item2.info
+    switch (type1) {
         case 'number':
-            switch (x2Type) {
+            switch (type2) {
                 case 'number':
                     return 0
                 case 'string':
                 case 'object':
                     return 1
             }
-            break
+            break;
         case 'string':
-            switch (x2Type) {
+            switch (type2) {
                 case 'number':
                     return -1
                 case 'string':
@@ -72,16 +85,18 @@ userInfos.sort((x1, x2) => {
                 case 'object':
                     return 1
             }
-            break
+            break;
         case 'object':
-            switch (x2Type) {
+            switch (type2) {
                 case 'number':
                 case 'string':
                     return -1
                 case 'object':
                     return 0
             }
-            break
+            break;
         default: return 0
     }
 })
+
+// 如何对userInfos的balance，进行从小到大的排序

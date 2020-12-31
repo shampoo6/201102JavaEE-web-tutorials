@@ -84,3 +84,4 @@ arr.splice(4, 1, '你好么?')
 console.log(arr)
 
 // 如何清空数组？
+arr.splice(0, arr.length)
