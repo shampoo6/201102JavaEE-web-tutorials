@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 算术运算符
+    // 进行数学运算的符号
+    // 包括 加 减 乘 除 模
+
+    let x = 1
+    let y = 2
+    let result = 0
+
+    // 加
+    result = x + y
+    console.log(result)
+    // 减
+    result = x - y
+    console.log(result)
+    // 乘
+    x = 3
+    result = x * y
+    console.log(result)
+    // 除
+    result = x / y
+    console.log(result)
+    // 模 ：作用是取余数
+    result = x % y
+    console.log(result)
+
+    // 模运算的特点是，永远不会大于等于除数
+
+
+    // 以下是一个模运算的例子
+    let msg = '吃了没？'
+    let arr = ['吃了', '没吃', '正准备吃']
+
+    // Math.round((Math.rand()*1000)) 该表达式可以获取 0 ~ 1000 的一个随机整数
+    let rand = Math.round((Math.random()*1000))
+    rand = rand % arr.length
+    console.log(arr[rand])
+</script>
+
+</html>
