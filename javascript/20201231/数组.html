@@ -34,6 +34,53 @@
 
     // js的数组可以自定义编号进行赋值
 
+    // -------------------------------------------------
+
+    // 数组的操作有哪些？
+
+    // push: 追加元素到数组的末尾
+    // 参数是要追加到数组中的数据
+    arr.push('hello world')
+    // 参数可以有多个，用逗号隔开
+    arr.push(1, 2, 3)
+
+    // pop: 取出数组末尾的元素
+    let result = arr.pop()
+    console.log(result)
+
+    // unshift: 在数组头部插入数据
+    arr.unshift('3322')
+    // 参数可以有多个，用逗号隔开
+    arr.unshift(1, 2, 3)
+
+    // shift: 从数组头部取出数据
+    arr.shift()
+
+    // 获取数组长度
+    console.log(arr.length)
+
+    // concat: 连结数组，在原有数组基础上，加上后续加入的元素，或后续参数数组中的元素，最后返回一个新数组
+    // 参数是另一个数组，或元素，可以有多个
+    arr = arr.concat([4, 5, 6])
+    // concat可以用于深度拷贝数组
+
+    function temp(_arr) {
+        for (let i = 0; i < _arr.length; i++) {
+            _arr[i] = _arr[i] + 1
+        }
+    }
+
+    let arr2 = [1, 2, 3]
+    // let arr3 = arr2 // 浅表复制 本质是直接将引用赋值给了arr3
+    let arr3 = arr2.concat([]) // 深度复制
+    temp(arr3)
+    console.log(arr2)
+
+    // join：拼接数组成为一个字符串
+    let arr4 = ['hello', 'world', '!!!']
+    // 参数是连结数组元素时使用的连结符号
+    console.log(arr4.join('-'))
+
 </script>
 
 </html>

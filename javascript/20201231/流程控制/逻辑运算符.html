@@ -80,7 +80,7 @@
 
     // ----------------------------------------
     // 与 或 非
-    
+
     // 此类运算，运算符两端，可以是不同的布尔表达式
     // 与(也叫做 且): 符号两端必须都为真，结果才为真
     b = true && false
@@ -104,6 +104,25 @@
     b = false
     b = !b // 使用非运算，可以直接倒置布尔值
     console.log(b)
+
+    // 三元运算符 （三目运算）
+    // 语法 bool expression ?  section1: section2
+    // 先执行 布尔表达式，如果结果是真，那么返回 section1 部分的值，否则返回 section2 的值
+    b = 1 > 0 ? '结果为真' : '结果为假'
+
+    // 三元运算的作用：最大的作用是给变量赋值，如果遇到需要进行2选1赋值判断时，可以考虑使用三元运算符
+
+    let sex = 'other'
+    let zhCnSex
+    // if (sex === 'male') {
+    //     zhCnSex = '男'
+    // } else if (sex === 'female') {
+    //     zhCnSex = '女'
+    // } else {
+    //     zhCnSex = '其他'
+    // }
+    zhCnSex = sex === 'male' ? '男' : (sex === 'female' ? '女' : '其他')
+    console.log(zhCnSex)
 
 </script>
 
