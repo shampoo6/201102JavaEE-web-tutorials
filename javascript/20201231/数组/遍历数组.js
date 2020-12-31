@@ -100,3 +100,12 @@ userInfos.sort((item1, item2) => {
 })
 
 // 如何对userInfos的balance，进行从小到大的排序
+userInfos.sort((item1, item2) => {
+    if (item1.balance > item2.balance) {
+        return 1
+    }
+    if (item1.balance < item2.balance) {
+        return -1
+    }
+    return 0
+})
