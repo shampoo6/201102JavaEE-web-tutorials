@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <form>
+        <input class="inp" name="name" />
+        <button class="sub" style="display:none">提交</button>
+    </form>
+    <button onclick="submit()">提交</button>
+</body>
+<script>
+    function submit() {
+        // 做参数验证或过滤参数等操作
+        let inp = document.querySelector('.inp')
+        inp.value = inp.value.trim()
+
+        document.querySelector('.sub').click()
+    }
+</script>
+
+</html>
