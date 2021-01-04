@@ -1,10 +1,15 @@
 // 发牌员
 function Host() {
+    // 牌组
     this.deck = []
+    // host的手牌
     this.player = new Player()
+    // 扑克牌点数统计
     this.hostPoints = 0
     this.playerPoints = 0
+    // 胜负flag
     this.win = 0
+    // 用于提示的标签
     let info = qs('.info')
 
     // 重置
