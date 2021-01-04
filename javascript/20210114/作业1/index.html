@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .content {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .pool,
+        .clothes,
+        .pants,
+        .package {
+            width: 25%;
+            height: 100%;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="store.createItem(0)">创建衣服</button>
+        <button onclick="store.createItem(1)">创建裤子</button>
+        <button onclick="store.createItem(2)">创建包包</button>
+    </div>
+    <div class="content">
+
+        <!-- 商品池 -->
+        <div class="pool">
+            <ul>
+
+            </ul>
+        </div>
+
+        <div class="clothes">
+            <ul>
+
+            </ul>
+        </div>
+
+        <div class="pants">
+            <ul>
+
+            </ul>
+        </div>
+
+        <div class="package">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div class="worker">
+        <p>工人：当前体力<span>5</span></p>
+        <button onclick="worker.sort()">整理货物</button>
+        <button onclick="worker.rest()">休息</button>
+    </div>
+</body>
+<script>
+
+    const names = ['衣服', '裤子', '包包']
+
+    // 商品
+    function Goods(_name) {
+        this.name = _name
+        this.render = () => {
+            let sb = []
+            sb.push('<li>')
+            sb.push(this.name)
+            sb.push('</li>')
+            return sb.join('')
+        }
+    }
+
+    // 仓库
+    function Store() {
+        // 池
+        this.pool = []
+        // 衣服
+        this.clothes = []
+        // 裤子
+        this.pants = []
+        // 包包
+        this.package = []
+        // 创建商品
+        this.createItem = (i) => {
+            this.pool.push(new Goods(names[i]))
+            ui.render()
+        }
+
+        this.render = () => {
+            renderOne('pool', this.pool)
+            renderOne('clothes', this.clothes)
+            renderOne('pants', this.pants)
+            renderOne('package', this.package)
+        }
+
+        let renderOne = (name, arr) => {
+            let ul = document.querySelector('.' + name + '>ul')
+            ul.innerHTML = ''
+            arr.forEach(goods => {
+                ul.innerHTML += goods.render()
+            })
+        }
+    }
+
+    let store = new Store()
+
+    function UIController() {
+        this.render = () => {
+            store.render()
+            worker.render()
+        }
+    }
+
+    function Worker() {
+        this.maxEnergy = 5
+        this.energy = this.maxEnergy
+        this.sort = () => {
+            if (this.energy === 0) {
+                alert('体力不足请休息')
+                return
+            }
+            let goods = store.pool.pop()
+            switch (goods.name) {
+                case names[0]:
+                    store.clothes.push(goods)
+                    break;
+                case names[1]:
+                    store.pants.push(goods)
+                    break;
+                case names[2]:
+                    store.package.push(goods)
+                    break;
+            }
+            this.energy--
+            ui.render()
+        }
+
+        this.rest = () => {
+            this.energy = this.maxEnergy
+            ui.render()
+        }
+
+        this.render = () => {
+            document.querySelector('.worker>p>span').innerText = this.energy
+        }
+    }
+
+    let worker = new Worker()
+
+    let ui = new UIController()
+    ui.render()
+</script>
+
+</html>
