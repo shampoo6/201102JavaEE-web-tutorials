@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    function Card(_face, _point) {
+        this.face = _face
+        this.point = _point
+    }
+
+    let faces = ['♠', '♥', '♦', '♣']
+
+    let humans = {}
+    humans[1] = 'A'
+    humans[11] = 'J'
+    humans[12] = 'Q'
+    humans[13] = 'K'
+
+
+    let deck = []
+
+    for (let i = 0; i < faces.length; i++) {
+        for (let j = 0; j < 13; j++) {
+            let point = j + 1
+            point = humans[point] ? humans[point] : String(point)
+            deck.push(new Card(faces[i], point))
+        }
+    }
+
+    deck.push(new Card('little joker', '50'))
+    deck.push(new Card('big joker', '100'))
+
+    console.log(deck)
+
+</script>
+
+</html>
