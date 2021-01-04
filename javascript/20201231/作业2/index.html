@@ -3,9 +3,27 @@
 
 <head></head>
 
-<body></body>
+<body>
+    <!-- 展示牌堆 -->
+    <div class="deck">牌堆数：<span>0</span></div>
+    <button class="draw">抽牌</button>
+    <!-- 展示玩家手牌列表 -->
+    <div class="hand">
+        <ul></ul>
+    </div>
+</body>
 <script>
     // 面向对象开发
+
+    // 事件绑定
+
+    // 抽牌事件
+    document.querySelector('.draw').addEventListener('click', () => {
+        let card = host.draw()
+        player.hold(card)
+
+        uiCtrl.render()
+    })
 
     // 配置
     // 花色
@@ -22,6 +40,10 @@
     function Card(_face, _point) {
         this.face = _face
         this.point = _point
+        // 定义卡片的显示函数
+        this.render = () => {
+            return '<li>' + this.face + ' ' + this.point + '</li>'
+        }
     }
 
     // 发牌员
@@ -62,7 +84,41 @@
     let host = new Host()
     host.createDeck()
     host.shuffle()
-    console.log(host.deck)
+
+    function Player() {
+        this.hand = []
+        // 摸牌
+        this.hold = (card) => {
+            this.hand.push(card)
+        }
+        // 显示玩家
+        this.render = () => {
+            let ul = document.querySelector('.hand>ul')
+            // 清空
+            ul.innerHTML = ''
+            this.hand.forEach((card) => {
+                ul.innerHTML += card.render()
+            })
+        }
+    }
+
+    let player = new Player()
+
+    // ui控制器
+    function UIController() {
+        // 渲染函数，调用此函数，绘制内容到页面
+        // 所有用户交互函数中，该函数应该被调用
+        this.render = () => {
+            // 绘制牌组剩余数量
+            document.querySelector('.deck>span').innerHTML = host.deck.length
+            // 显示玩家手里的卡牌
+            player.render()
+        }
+    }
+
+    let uiCtrl = new UIController()
+    uiCtrl.render()
+
 </script>
 
 </html>
