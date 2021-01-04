@@ -34,6 +34,28 @@
         console.log('程序执行finally')
     }
 
+    // 手动抛出异常
+    try {
+        // 只要是在try中发生的异常，无论是否包含在函数里，都能被catch住
+        fn()
+    } catch (e) {
+        console.error(e)
+    }
+
+    function fn() {
+        let x = 16
+        let y = 0
+        // 验证参数，除数不能为0
+        if (y === 0) {
+            // throw : 手动抛出异常
+            // Error: 异常类，构造函数，传入一个字符串，作为异常提示信息
+            throw new Error('除数不能为0')
+        }
+        console.log(x / y)
+    }
+
+    // 为什么要使用手动抛出异常？
+    // 终断程序执行，控制执行的流程
 </script>
 
 </html>

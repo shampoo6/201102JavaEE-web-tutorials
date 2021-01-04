@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 字符串操作
+    let str = 'hello world'
+
+    // 字符串可以看作是字符数组
+    console.log(str.length) // 字符串长度
+    console.log(str[2]) // 获取字符串中的字符
+
+    // split 分割字符串
+    // 作用：根据提供的参数字符，将字符串分割成字符串数组
+    let arr = str.split(' ')
+
+    console.log(arr)
+
+    // 举例：替换字符
+    str = '123@456@789'
+    // 将 @ at符号，替换成空格
+    arr = str.split('@')
+    str = arr.join(' ')
+    console.log(str)
+
+    // trim：字符串首尾去空格
+    str = '       hello      world       '
+    console.log(str)
+    console.log(str.trim())
+
+    // substring: 截取子字符串
+    // 语法： str.substring(start, end)
+    // start: 从哪里开始截取
+    // end：截取到哪里为止
+    str = 'agbcdefg'
+    console.log(str.substring(3, 6))
+    // 同样遵守前截后不截
+
+    // search: 获取字符串中某字符所处字符串中的索引
+    // indexOf: 获取字符串中某字符所处字符串中的索引
+    console.log(str.search('g'))
+    console.log(str.indexOf('g')) // indexOf 会搜索最先出现的字符
+    console.log(str.lastIndexOf('g')) // lastIndexOf 会搜索最后出现的字符
+
+    // charAt: 指定字符串中索引处的值，和直接使用索引取值结果相同
+    console.log(str[4])
+    // 等价于：
+    console.log(str.charAt(4))
+
+    // startsWith: 判断是否以指定字符串开头，返回bool值
+    console.log(str.startsWith('abc'))
+
+    // endsWith: 判断是否以指定字符串结尾，返回bool值
+    console.log(str.endsWith('fg'))
+
+    // toLowerCase, toUpperCase 转换英文字符串的大小写
+    str = str.toUpperCase()
+    console.log(str)
+    str = str.toLowerCase()
+    console.log(str)
+
+    // 数字的 toFixed
+    let pi = 3.1415926
+    // toFixed 用于指定小数点后显示多少位
+    // 参数就是显示的位数
+    // 返回值是一个字符串而不是数组
+    str = pi.toFixed(2)
+    console.log(typeof str)
+    console.log(str)
+</script>
+
+</html>
