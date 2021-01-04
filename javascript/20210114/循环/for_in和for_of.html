@@ -1,8 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
-    <script>
-        
-    </script>
+
+<head></head>
+
+<body></body>
+<script>
+    let users = [
+        {
+            name: '小红',
+            age: 16
+        },
+        {
+            name: 'Amy',
+            age: 1
+        },
+        {
+            name: '小明',
+            age: 18
+        },
+    ]
+
+
+    // for of: 用于遍历数组中每一个元素
+    // 语法：for(let item of array) { body }
+    // 圆括号：item 代表每一个循环遍历的元素，array代表被遍历的数组
+    for (let item of users) {
+        console.log(item)
+        // break 支持使用break
+    }
+
+    // 作用：用于遍历数组，且不需要知道数组成员的索引
+
+
+    // for in: 用于遍历数组或对象中的每一个元素或属性
+
+    // 遍历数组
+    // 圆括号：index代表遍历的每个元素的索引，users是需要遍历的数组
+    // 和 for of 相比，可以获取到数组元素的索引
+    for (let index in users) {
+        console.log(index)
+        console.log(users[index])
+    }
+
+    // 遍历对象
+    let obj = {
+        name: 'John',
+        age: 18,
+        sex: 'male',
+        info: {
+            address: '美国'
+        },
+        sleep: () => {
+            console.log('我正在睡觉')
+        }
+    }
+
+    // 如果遍历对象，那么in前面的参数key，代表的是对象的属性
+    // 所以对象值，可以使用放阔号取值，如：obj[key]
+    for (let key in obj) {
+        console.log(key)
+        console.log(obj[key])
+    }
+
+    // 作用：用于遍历数组中每一个元素，或者用于遍历对象的所有属性
+
+</script>
+
 </html>
