@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 异常处理：程序发生运行时异常后，开发人员所作的处理程序，叫做异常处理
+
+    // 语法：
+    // try {
+    //     // try 的代码块将尝试执行，如果发生异常，后续代码将会终止，代码会跳出 try 语句
+    // } catch (e) {
+    //     // 如果在 try 里发生了异常，程序跳出 try 以后，就会进入 catch 代码块
+    //     // 其中 catch 接收一个 e 参数，该参数是异常对象
+    // } finally {
+    //     // finally 是可以不写的
+    //     // finally的作用：无论程序如何执行，finally代码块中的内容，始终会被执行
+    // }
+
+    try {
+        let a = {
+            x: 0,
+            y: 2
+        }
+
+        a = null
+
+        console.log(a.x)
+        console.log(a.y)
+    } catch (e) {
+        console.error(e)
+    } finally {
+        console.log('程序执行finally')
+    }
+
+</script>
+
+</html>
