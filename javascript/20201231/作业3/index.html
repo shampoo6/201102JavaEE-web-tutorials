@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./js/qs.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/host.js"></script>
+    <script src="./js/ui.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div class="host">
+        <h3>庄家点数小于17就会自动要牌</h3>
+        <div>
+            剩余牌：<span class="card-count">0</span>&nbsp;
+            <button onclick="restart()">重新开始</button>
+            <button onclick="draw()">发牌</button>
+        </div>
+        <ul>
+            <li>花色 点数</li>
+            <li>花色 点数</li>
+        </ul>
+        <div>当前点数: <span class="host-points">0</span></div>
+    </div>
+    <div class="player">
+        <ul>
+            <li>花色 点数</li>
+            <li>花色 点数</li>
+        </ul>
+        <div>
+            <div>当前点数: <span class="player-points">0</span></div>
+            <div>
+                <button onclick="getCard()">要牌</button>
+                <button onclick="stop()">停牌</button>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+
+    </div>
+</body>
+<script>
+    let host = new Host()
+    let player = new Player()
+    let ui = new UI()
+
+    host.createDeck()
+    host.shuffle()
+
+    ui.render()
+
+    // 发牌
+    function draw() {
+        let card = host.draw()
+        player.hold(card)
+        card = host.draw()
+        player.hold(card)
+
+        host.calc(player.hand)
+
+        ui.render()
+    }
+
+    // 要牌
+    function getCard() {
+        let card = host.draw()
+        player.hold(card)
+        host.calc(player.hand)
+        ui.render()
+    }
+
+    // 停牌
+    function stop() {
+        while (host.hostPoints < 17) {
+            let card = host.draw()
+            host.player.hold(card)
+            host.calc(player.hand)
+        }
+
+        ui.render()
+
+        host.checkGameOver()
+    }
+
+    function restart() {
+        host.reset()
+        player.hand = []
+        ui.render()
+    }
+</script>
+
+</html>
