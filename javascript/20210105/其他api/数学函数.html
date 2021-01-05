@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 数学函数：专门用于处理算术问题的函数组
+
+    // abs: 取绝对值
+    let num = -5
+    console.log(Math.abs(num))
+
+    // 三角函数：tan sin cos
+    // 反三角函数：acos asin atan
+
+    // ceil(天花板): 小数向上取整
+    num = 2.3
+    console.log(Math.ceil(num))
+    // floor(地板): 小数向下取整
+    console.log(Math.floor(num))
+    // round: 四舍五入
+    console.log(Math.round(num))
+
+    // max: 取大值
+    num = 1
+    let num2 = 2
+    // 参数可以填多个
+    console.log(Math.max(num, num2))
+
+    // min：取小值
+    console.log(Math.min(num, num2))
+
+    // 数字定界
+    // clamp(num, min 1, max 5)
+
+    // pow(x, y) 幂: 获取x的y次方
+    console.log(Math.pow(2, 3))
+
+    // 随机数
+    // 取值为0~1，0会被取到，但1取不到
+    console.log(Math.random())
+    // 放大上限：Math.random() * n ,取值区间变成 0~n
+    console.log(Math.random() * 54)
+    // 放大下限：n + Math.random(), 取值区间变成 n~n+1
+
+    // sign: 返回数字的符号，结果是1或-1
+    num = 10
+    console.log(Math.sign(num))
+    num = -10
+    console.log(Math.sign(num))
+
+    // Math.sqrt(x) : 开平方
+    num = 81
+    console.log(Math.sqrt(num))
+
+</script>
+
+</html>
