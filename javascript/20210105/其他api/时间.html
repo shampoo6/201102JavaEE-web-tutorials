@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 时间对象 Date
+    // js 中时间是相对时间，相对的是格林威治1970年1月1日0点0分
+
+    // 获取当前系统时间
+    let date = new Date()
+
+    // 构造函数
+    // new Date();
+    // new Date(value); // 可以填入一个数字格式的时间
+    // new Date(dateString);
+    // new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+
+    // 设置年月日时分秒
+    date = new Date(1997, 6, 25, 18, 11, 45)
+
+    // 年
+    console.log(date.getFullYear())
+    // 月
+    console.log(date.getMonth())
+    // 日 ：一个月中的第几天
+    console.log(date.getDate())
+    // 时
+    console.log(date.getHours())
+    // 分
+    console.log(date.getMinutes())
+    // 秒
+    console.log(date.getSeconds())
+
+    // 修改时间
+    // 设置年
+    date.setYear(2021)
+    // 设置月，设置的数字代表月份-1
+    date.setMonth(8)
+    // 设置日
+    date.setDate(28)
+    // 设置时分秒
+    date.setHours(21)
+    date.setMinutes(30)
+    date.setSeconds(45)
+
+    // 数字格式的时间
+
+    // 获取数字格式的时间
+    // 该时间代表格林威治时间到今天的时间差，单位是毫秒
+    console.log(date.getTime())
+
+    // 获取当前系统时间的数字格式
+    console.log(Date.now())
+
+
+</script>
+
+</html>
