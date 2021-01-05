@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>
+        // 声明正则表达式
+        let regex = new RegExp('') // 以对象形式声明正则表达式
+        regex = /^$/ // 脚本形式定义正则表达式
+
+        // 例如：匹配一个字符串是否包含某个关键字
+        let str = '嫦娥五号牛逼疯了'
+        regex = /^(\s|\S)*牛逼(\s|\S)*$/ // 定义正则表达式，用于鉴定是否字符串中含有 “牛逼”
+        let result = regex.test(str) // 若字符串str符合正则表达式的匹配规则，则返回true，否则返回false
+        console.log(result)
+    </script>
+</html>
