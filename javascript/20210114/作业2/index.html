@@ -1,23 +1,77 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <style>
+        .tip {
+            color: red;
+            font-weight: bolder;
+        }
+    </style>
+</head>
 
 <body>
-    <form>
-        <input class="inp" name="name" />
-        <button class="sub" style="display:none">提交</button>
+    <form method="get">
+        <div></div><label>姓名：<input class="name-input" name="name" /></label></div>
+        <div></div><label>邮箱：<input class="mail-input" name="mail" /></label><span class="tip mail-tip"></span></div>
+        <div></div><label>密码：<input type="password" class="pwd-input" name="pwd" placeholder="请输入10位密码" /></label><span
+            class="tip pwd-tip"></span></div>
+        <div></div><label>个性签名：<textarea rows="3" class="sign-textarea" name="sign"></textarea></label></div>
+        <div></div><label>群备注名：<input class="nickname-input" name="nickname" placeholder="请以 201102 开头" /></label><span
+            class="tip nickname-tip"></span></div>
+        <button class="submit" style="display:none">提交</button>
     </form>
-    <button onclick="submit()">提交</button>
+    <button class="btn" onclick="submit()">提交</button>
 </body>
 <script>
-    function submit() {
-        // 做参数验证或过滤参数等操作
-        let inp = document.querySelector('.inp')
-        inp.value = inp.value.trim()
-
-        document.querySelector('.sub').click()
+    // 声明一个函数qs，用于获取元素
+    function qs(selector) {
+        return document.querySelector(selector)
     }
+
+    // 提交表单
+    function submit() {
+        // 定义一个标识，用于指示验证是否通过
+        let valid = true
+
+        // 做参数处理和验证
+        let el = qs('.name-input')
+        el.value = el.value.trim()
+
+        el = qs('.mail-input')
+        if (el.value.indexOf('@') === -1) {
+            qs('.mail-tip').innerText = '请输入正确的邮箱'
+            valid = false
+        } else {
+            qs('.mail-tip').innerText = ''
+        }
+
+        el = qs('.pwd-input')
+        let len = el.value.length
+        if (len !== 10) {
+            qs('.pwd-tip').innerText = '请输入10位有效密码'
+            valid = false
+        } else {
+            qs('.pwd-tip').innerText = ''
+        }
+
+        el = qs('.sign-textarea')
+        let word = '共产党'
+        el.value = el.value.split(word).join('***')
+
+        el = qs('.nickname-input')
+        let start = '201102'
+        if (!el.value.startsWith(start)) {
+            qs('.nickname-tip').innerText = '请输入以201102开头的群备注名'
+            valid = false
+        } else {
+            qs('.nickname-tip').innerText = ''
+        }
+
+        // 点击提交，跳转页面
+        if (valid) qs('.submit').click()
+    }
+
 </script>
 
 </html>
