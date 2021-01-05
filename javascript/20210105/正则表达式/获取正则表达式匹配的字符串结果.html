@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>
+        // 字符串可以通过匹配正则表达式，获取匹配的结果数组
+
+        // 例如：
+        let str = '123122312223'
+        // 创建正则
+        let regex = /2+/
+        // 使用字符串的match函数，匹配正则表达式
+        let result = str.match(regex)
+        // result 的结果是：正则表达式中第一个匹配成功的子字符串
+        console.log(result)
+
+        // 如果修改正则表达式如下：
+        regex = /2+/g // 正则表达式最后的 'g' 代表开起全局匹配模式
+        // 若不用全局模式，那么正则表达式匹配到第一个符合条件的字符串时，就会结束匹配
+        // 否则，将继续进行匹配，直到字符串结束为止
+
+        result = str.match(regex)
+        console.log(result)
+
+    </script>
+</html>
