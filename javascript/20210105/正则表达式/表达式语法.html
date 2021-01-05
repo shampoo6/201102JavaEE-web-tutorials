@@ -68,6 +68,42 @@
     // [^a-z]: 取负范围值，只要字符不在a到z的范围之间，即匹配成功，多用在数字上
     regex = /[^0-5][^6-9]/
 
+    // ------------------- 分组 (pattern)
+    // 将一组内容作为一个字符进行匹配就是分组
+    regex = /^123(goodIdea)+789$/
+    
+    // 站在字符串的角度看，圆括号的作用，不仅用于匹配正则表达式的字符串，还需要取值
+    str = '123goodIdeagoodIdea789'
+    // 最终的结果将包含正则表达式匹配成功的字符串 和 圆括号中的内容
+    console.log(str.match(regex))
+    
+    // (?:pattern) : 匹配正则内容且不获取圆括号中的值
+    regex = /^123(?:goodIdea)+789$/
+    console.log(str.match(regex))
+
+    // -------------------- 预查询
+    // 预查询：正则表达式会去匹配预查询中的内容，但不会进行取值
+    // 预查询分方向：前后
+
+    // (?=pattern) 后置预查询
+    regex = /Windows(?=95|98|2000|NT|PE)/
+    str = 'Windows95'
+    // 预查询将在匹配的时候进行查找，但调用str.match时不会获取预查询部分的内容
+    // 所以上述例子，最终匹配后会得到：Windows
+    console.log(str.match(regex))
+    
+    // (?!pattern) 负后置预查询
+    regex = /Windows(?!95|98|2000|NT|PE)/
+    
+    // (?<=pattern) 前置预查询
+    regex = /(?<=95|98|2000|NT|PE)Windows/
+    str = 'PEWindows'
+    console.log(str.match(regex))
+    
+    // (?<!pattern) 负前置预查询
+    regex = /(?<!95|98|2000|NT|PE)Windows/
+
+
 </script>
 
 </html>
