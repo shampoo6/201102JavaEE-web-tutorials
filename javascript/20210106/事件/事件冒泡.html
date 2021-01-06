@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div>
+        <button>按钮</button>
+    </div>
+</body>
+
+<script>
+    // 绑定事件时传入的事件回调函数，并不是用户触发的，而是事件触发时，触发事件的元素自身调用的
+    // 所以元素在调用事件回调函数时，传入了一个参数 event
+    document.querySelector('button').addEventListener('click', (event) => {
+        // 阻止事件冒泡
+        event.stopPropagation()
+        console.log(event)
+        console.log('button的click事件被触发了')
+    })
+    document.querySelector('div').addEventListener('click', () => {
+        console.log('div的click事件被触发了')
+    })
+    document.body.addEventListener('click', () => {
+        console.log('body的click事件被触发了')
+    })
+</script>
+
+</html>
