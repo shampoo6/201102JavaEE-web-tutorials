@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div>
+        <button>按钮</button>
+    </div>
+</body>
+
+<script>
+    // 捕获事件
+    // 捕获事件，可以让指定元素，先获取到事件，再执行事件冒泡
+    // addEventListener，第三个参数，可以加入一个布尔值
+    // true：代表捕获事件
+    // false：代表不捕获
+    document.querySelector('div').addEventListener('click', e => {
+        console.log('div触发了点击事件')
+    }, true)
+    document.querySelector('button').addEventListener('click', e => {
+        console.log('button触发了点击事件')
+    })
+    document.body.addEventListener('click', e => {
+        console.log('body触发了点击事件')
+    }, true)
+    
+    // 使用了事件捕获的元素，始终先获取到事件
+    // 如果在同一个树状结构中，有多个元素捕获了相同事件，事件将先在外部节点执行，再在内部节点执行
+    // 没有捕获事件的元素，最后按照冒泡的顺序触发事件
+</script>
+
+</html>
