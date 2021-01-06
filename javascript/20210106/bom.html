@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>
+        // bom (broswers object model) 浏览器对象模型
+
+        // 常见bom
+        console.log(window) // 用于访问浏览器窗口 window.innerWidth window.onload
+        console.log(location) // 用于浏览器跳转页面 location.href
+        console.log(localStorage) // 浏览器数据仓库 
+        console.log(sessionStorage)
+        console.log(indexedDB)
+
+        // localStorage 可以持久化数据到浏览器中，下次打开相同页面时可以访问数据
+        // 数据读写
+        // localStorage.setItem('testData', 5)
+        // 简写：localStorage['testData'] = 10
+        console.log(localStorage.getItem('testData'))
+        
+    </script>
+</html>

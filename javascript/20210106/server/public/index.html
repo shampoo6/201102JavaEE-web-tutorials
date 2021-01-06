@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 引入jquery -->
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <ul id="u">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <input class="input1" />
+</body>
+<script>
+    // jquery : js工具库，主要有以下作用
+    // 1. 元素查询
+    // 2. 发起http网络请求
+
+    // 使用 $() 该函数查询元素，参数是css选择器
+    let $ul = $('ul')
+    // 查询结果是一个数组
+    console.log($ul)
+
+    // jquery 获取和赋值表单元素
+    let $input = $('.input1')
+    $input.val('这是js脚本赋值的内容')
+    console.log($input.val())
+
+    // each 遍历元素
+    $('li').each((index, element) => {
+        console.log(index) // 每个元素的索引
+        console.log(element) // 每个被遍历的元素
+    })
+
+    // 发起http网络请求
+    $.ajax({
+        url: 'http://127.0.0.1:1024/sayHello',
+        method: 'get',
+        dataType: 'json',
+        success(data) {
+            console.log('请求成功')
+            console.log(data)
+        },
+        error(e) {
+            console.log('请求异常')
+            console.error(e)
+        },
+        finally() {
+            console.log('finally 请求结束')
+        }
+    })
+</script>
+
+</html>

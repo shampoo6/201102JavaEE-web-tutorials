@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <style>
+        .box {
+            height: 1920px
+        }
+    </style>
+</head>
 
 <body>
-    <img src="./1.png" />
-    <input /><button onclick="submit()">提交</button>
+    <p>资源加载事件</p>
+    <img src="../1.jpg" />
+    <p>焦点事件</p>
+    <input class="input1" /><button onclick="submit()">提交</button>
+    <p>按键事件</p>
+    <input class="input2" />
+    <p>鼠标事件</p>
+    <div class="box1">box1</div>
 </body>
 
 <script>
@@ -23,8 +35,75 @@
         console.log('submit')
     }
 
+    // 资源加载失败事件
     qs('img').addEventListener('error', () => {
         console.log('资源加载失败')
+    })
+    // 资源加载完成事件
+    qs('img').addEventListener('load', () => {
+        console.log('资源加载完成')
+    })
+
+    // 焦点事件：获取焦点和失去焦点
+    // 焦点：被激活的表单元素就会获取到焦点状态
+    qs('.input1').addEventListener('focus', () => {
+        console.log('input获取了焦点')
+    })
+    qs('.input1').addEventListener('blur', () => {
+        console.log('input失去了焦点')
+    })
+
+    // 焦点事件只有表单元素存在
+    qs('img').addEventListener('focus', () => {
+        console.log('img获取了焦点')
+    })
+
+    // 尺寸变化事件
+    window.addEventListener('resize', (e) => {
+        console.log('窗口大小以发生变化')
+        console.log(window.innerWidth)
+        console.log(window.innerHeight)
+    })
+
+    // scroll
+    document.body.addEventListener('scroll', () => {
+        console.log('页面滚动了')
+    })
+
+
+    // 按键事件
+    // keydown 按键按下事件
+    qs('.input2').addEventListener('keydown', (e) => {
+        console.log('按键按下了')
+    })
+    // keypress 按键按住事件 连续出发
+    qs('.input2').addEventListener('keypress', (e) => {
+        console.log('按键按住了')
+    })
+    // keyup 按键抬起事件
+    qs('.input2').addEventListener('keyup', (e) => {
+        // 可以判断 e.keyCode 或 e.code 或 e.key 来区分按下的是哪一个按键
+        console.log(e)
+        console.log('按键抬起了')
+    })
+
+    // 鼠标事件
+    // 点击事件
+    qs('.box1').addEventListener('click', () => {
+        console.log('点击事件被触发了')
+    })
+    // 右键事件
+    qs('.box1').addEventListener('contextmenu', () => {
+        console.log('右键事件被触发了')
+    })
+    // 双击事件
+    qs('.box1').addEventListener('dblclick', () => {
+        console.log('双击事件被触发了')
+    })
+
+    // 窗口资源加载完成事件
+    window.addEventListener('load', () => {
+        // 该事件使用比较频繁
     })
 </script>
 
