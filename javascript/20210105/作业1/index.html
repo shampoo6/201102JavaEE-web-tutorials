@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    function clamp(num, min, max) {
+        num = Math.min(num, max)
+        num = Math.max(num, min)
+        return num
+    }
+
+    function random(min, max) {
+        // 通过检查的说明参数是整数
+        checkZhengShu(min)
+        checkZhengShu(max)
+
+        // 获取随机的取值区间
+        let space = max - min
+
+        let rand = Math.round(Math.random() * space)
+
+        return rand + min
+    }
+
+    function checkZhengShu(num) {
+        if (typeof num !== 'number') {
+            throw new Error('参数必须为数字')
+        }
+        let str = num + ''
+        let regex = /^\d+(\.0*)?$/
+
+        if (!regex.test(str)) {
+            throw new Error('参数必须是整数')
+        }
+    }
+
+    function getLength(x, y) {
+        let pow = Math.pow(x, 2) + Math.pow(y, 2)
+        return Math.sqrt(pow)
+    }
+</script>
+
+</html>

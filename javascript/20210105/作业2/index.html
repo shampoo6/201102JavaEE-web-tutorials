@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    function formatDate(date, pattern) {
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let day = date.getDate()
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+
+        pattern = pattern.replace(/yyyy/, year)
+        pattern = pattern.replace(/MM/, month)
+        pattern = pattern.replace(/DD/, day)
+        pattern = pattern.replace(/HH/, hours)
+        pattern = pattern.replace(/mm/, minutes)
+        pattern = pattern.replace(/ss/, seconds)
+
+        return pattern
+    }
+</script>
+
+</html>
