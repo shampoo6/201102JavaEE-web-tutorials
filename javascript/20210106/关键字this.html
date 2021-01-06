@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+<script>
+    // 参考：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this
+
+    // 关键 this 与 java 不同
+    // js 当中 this 是可以被赋值的
+    // Function.bind(obj) 可以给this赋值, 返回一个新的函数
+    function Car(_name) {
+        this.name = _name
+    }
+
+    let car = new Car('toyota')
+
+    function showMsg(msg) {
+        console.log(this)
+        console.log(msg)
+    }
+
+    showMsg = showMsg.bind(car)
+    showMsg('hello world')
+
+    // 全局中的this
+    console.log(this === window) // 结果为true 在全局中使用this，结果就是window对象
+
+    // 函数调用中的this
+    function showThis() {
+        return this
+    }
+
+    // 类实例中的this
+    function Bird(_name) {
+        // 类中的this代表该类实例对象，和java含义相同
+        this.name = _name
+    }
+
+    let bird = new Bird('蓝鸟')
+    console.log(bird.name)
+</script>
+
+</html>

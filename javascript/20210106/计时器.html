@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button onclick="stopInterval()">停止计时</button>
+</body>
+<script>
+    // 计时器：计时器是一个即时函数，时间到达后会掉用另一个指定的回调函数
+    // function timeUp() {
+    //     console.log('时间到了')
+    // }
+
+    // setTimeout: 设置一个时间段，经过该时间段后会触发另一个函数
+    // 第一个参数：时间到时，触发的函数
+    // 第二个参数：等待的时间段，单位是毫秒
+    // 返回一个handler(句柄): 该handler相当于该计时器的身份证
+    // let handler = setTimeout(timeUp, 3000)
+
+    let handler
+    let i = 0
+    function count() {
+        console.log(i)
+        i++
+        handler = setTimeout(() => {
+            count()
+        }, 1000)
+    }
+
+    // count()
+
+    // 停止计时
+    function stopTimeout() {
+        // clearTimeout 用于清除计时器
+        // 参数handler是计时器的返回值
+        clearTimeout(handler)
+    }
+
+    // 设置无限循环计时器
+    // 参数和返回值与 setTimeout 相同
+    handler = setInterval(() => {
+        console.log(i)
+        i++
+    }, 1000)
+
+    function stopInterval() {
+        // 用法和 clearTimeout 相同
+        clearInterval(handler)
+    }
+</script>
+
+</html>
