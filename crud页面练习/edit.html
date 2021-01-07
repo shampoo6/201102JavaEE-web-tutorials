@@ -6,18 +6,20 @@
 <body>
     <h3>编辑账号</h3>
     <form>
-        <div><label>id：<input value="0" disabled /></label></div>
-        <div><label>账号：<input value="zsdcqys" /></label></div>
-        <div><label>密码：<input value="1124" /></label></div>
-        <div><label>昵称：<input value="张三" /></label></div>
-        <div><label>余额：<input value="10" /></label></div>
-        <div><label>个性签名：<textarea rows="3">你大爷永远是你大爷</textarea></label></div>
+        <div><label>id：<input name="id" value="0" disabled /></label></div>
+        <div><label>账号：<input name="account" value="zsdcqys" /></label></div>
+        <div><label>密码：<input name="pwd" value="1124" /></label></div>
+        <div><label>昵称：<input name="nickName" value="张三" /></label></div>
+        <div><label>余额：<input name="balance" value="10" /></label></div>
+        <div><label>个性签名：<textarea name="sign" rows="3">你大爷永远是你大爷</textarea></label></div>
         <div>
-            <button>返回</button>
-            <button>提交</button>
+            <button class="back">返回</button>
+            <button class="submit">提交</button>
         </div>
     </form>
 </body>
-<script></script>
+<script src="./js/utils.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/edit.js"></script>
 
 </html>

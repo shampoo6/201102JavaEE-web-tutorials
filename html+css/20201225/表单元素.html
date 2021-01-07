@@ -9,6 +9,9 @@
                 input select textarea button
             -->
 
+            <!-- 表单元素都可以使用disabled来禁用元素 -->
+            <input disabled />
+
             <!-- label: 标签，起到提示用户录入，辅助用户输入的作用 -->
             <div>
                 <!-- 使用label包裹其他的表单元素 -->
@@ -25,6 +28,9 @@
                 <label>文本输入框：<input type="text" value="这是默认的文本"/></label><br/>
                 <label>数字输入框：<input type="number"/></label><br/>
                 <label>密码框：<input type="password" placeholder="请输入"/></label><br/>
+                <!-- type 为hidden时，我们称为隐藏域，该input框不会显示，但在文档中存在 -->
+                <!-- 隐藏域的作用，用于在html页面存放值，但不显示给用户 -->
+                <label>密码框：<input type="hidden" placeholder="请输入"/></label><br/>
             </div>
 
             <div>

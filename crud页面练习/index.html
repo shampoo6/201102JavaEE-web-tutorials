@@ -2,12 +2,7 @@
 <html>
 
 <head>
-    <style>
-        .my-form {
-            width: 295px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/main.css" />
 </head>
 
 <body>
@@ -17,15 +12,15 @@
         <form class="my-form">
             <fieldset>
                 <legend>查询</legend>
-                <label>昵称：<input/></label>
+                <label>昵称：<input /></label>
                 <button>查询</button>
             </fieldset>
             <fieldset>
                 <legend>工具栏</legend>
-                <button>添加</button>
+                <button class="add">添加</button>
             </fieldset>
         </form>
-        
+
     </div>
     <!-- 内容 -->
     <div>
@@ -41,7 +36,7 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-content">
                 <tr>
                     <td>0</td>
                     <td>zsdcqys</td>
@@ -58,8 +53,8 @@
         </table>
     </div>
 </body>
-<script>
-
-</script>
+<script src="./js/utils.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/index.js"></script>
 
 </html>

@@ -6,17 +6,19 @@
 <body>
     <h3>添加账号</h3>
     <form>
-        <div><label>账号：<input /></label></div>
-        <div><label>密码：<input /></label></div>
-        <div><label>昵称：<input /></label></div>
-        <div><label>余额：<input /></label></div>
-        <div><label>个性签名：<textarea rows="3"></textarea></label></div>
+        <div><label>账号：<input name="account"/></label></div>
+        <div><label>密码：<input name="pwd"/></label></div>
+        <div><label>昵称：<input name="nickName"/></label></div>
+        <div><label>余额：<input name="balance"/></label></div>
+        <div><label>个性签名：<textarea name="sign" rows="3"></textarea></label></div>
         <div>
-            <button>返回</button>
-            <button>提交</button>
+            <button class="back">返回</button>
+            <button class="submit">提交</button>
         </div>
     </form>
 </body>
-<script></script>
+<script src="./js/utils.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/add.js"></script>
 
 </html>
