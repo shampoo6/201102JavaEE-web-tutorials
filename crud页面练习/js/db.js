@@ -18,7 +18,7 @@ function Database() {
         // 设置缓存数组
         tableToArr(table, tableName)
     }
-    
+
     // 修改
     this.update = (tableName, data) => {
         let table = getTable(tableName)
