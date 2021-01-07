@@ -49,6 +49,15 @@ let newArr = userInfos.map((item, index) => {
 
 console.log(newArr)
 
+// 过滤数组
+newArr = userInfos.filter((item, index) => {
+    console.log(item)
+    console.log(index)
+    return true // 返回true：将当前元素加入新数组，否则就不加入
+})
+
+console.log(newArr)
+
 // sort 排序
 // 数组排序，有默认规则
 // 字符串数组：按照英文字母顺序，将首字母进行排序
