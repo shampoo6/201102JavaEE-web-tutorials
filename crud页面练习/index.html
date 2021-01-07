@@ -1,8 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
-    <script>
+
+<head>
+    <style>
+        .my-form {
+            width: 295px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页头 -->
+    <div>
+        <h3>账户表</h3>
+        <form class="my-form">
+            <fieldset>
+                <legend>查询</legend>
+                <label>昵称：<input/></label>
+                <button>查询</button>
+            </fieldset>
+            <fieldset>
+                <legend>工具栏</legend>
+                <button>添加</button>
+            </fieldset>
+        </form>
         
-    </script>
+    </div>
+    <!-- 内容 -->
+    <div>
+        <table border>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>账号</th>
+                    <th>密码</th>
+                    <th>昵称</th>
+                    <th>余额</th>
+                    <th>个性签名</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>zsdcqys</td>
+                    <td>1124</td>
+                    <td>张三</td>
+                    <td>10</td>
+                    <td>你大爷永远是你大爷</td>
+                    <td>
+                        <button>删除</button>
+                        <button>编辑</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+
+</script>
+
 </html>
